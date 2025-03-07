@@ -5,6 +5,8 @@ import Contact from "./pages/Contact/contact";
 import News from "./pages/News/news";
 import Shop from "./pages/Shop/shop";
 import './App.css'
+import Header from "./components/Header/header";
+import HeaderLayout from "./components/HeaderLayout/headerLayout";
 
 function App() {
 
@@ -12,11 +14,13 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/contact" element={<Contact />}/>
-        <Route path="/news" element={<News />}/>
-        <Route path="/shop" element={<Shop />}/>
+        <Route element={<HeaderLayout />}>
+          <Route path="/" element={<Home />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/news" element={<News />}/>
+          <Route path="/shop" element={<Shop />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
     </>
