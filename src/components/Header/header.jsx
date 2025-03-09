@@ -26,7 +26,7 @@ const Header = () => {
 
     return (
     <div className={styles.header}>
-            <img src={""} />
+            <img src={"/carlexdesign.png"} />
             <div className={styles.navWrap}>
                 <a href="/">Home</a>
                 <a href="about">About</a>
