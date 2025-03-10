@@ -19,4 +19,9 @@
     font-size: 5em;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    transition: opacity 0.5s ease-in-out;
+}
+
+#text {
+    transition: opacity 0.1s ease-in-out; /* Skapa fade-out effekt */
 }
