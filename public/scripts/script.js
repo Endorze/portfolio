@@ -8,7 +8,7 @@ let hill5 = document.getElementById('hill5');
 window.addEventListener("scroll", () => {
     let value = window.scrollY;
     console.log(value);
-    text.style.marginTop = value * 3.5 + "px"
+    text.style.marginTop = value * 2.5 + "px"
     leaf.style.marginTop = value * -1.5 + "px"
     leaf.style.left = value * 1.5 + "px"
     hill5.style.left = value * 1.5 + "px"

@@ -1,9 +1,5 @@
 
-.headerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 
 .header a {
   text-decoration: none;
@@ -17,27 +13,30 @@
 .navWrap {
   display: flex;
   transform-origin: right;
-  flex-basis: 100%;
-  max-width: 500px;
   justify-content: space-between;
 }
 
 .header {
   position: fixed;
-  width: 100%;
   display: flex;
   align-items: center;
   transition: 0.5s ease-in-out;
   z-index: 1;
-  background-color: #0000003a;
-  padding: 0px 100px;
+  background-color: #2928280e;
+  
+  width: 100%;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header img {
   height: 120px;
   width: auto;
   transition: height 0.5s ease-in-out;
-  margin-right: 250px;
 }
 
 .scroll-header img {
@@ -53,9 +52,12 @@
 .scroll-header a {
   text-decoration: none;
   cursor: pointer;
-  padding: 35px;
   font-size: 1.3rem;
   font-weight: 700;
+}
+
+.scroll-header .navWrap {
+  
 }
 
 
