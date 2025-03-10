@@ -1,3 +1,4 @@
+import Container from "../Container/container"
 import styles from "./header.module.css"
 import { useEffect, useRef } from 'react'
 
@@ -27,16 +28,19 @@ const Header = () => {
     }, [])
 
     return (
-    <div ref={ref} className={styles.header}>
-            <img src={"/carlexdesign.png"} />
-            <div className={styles.navWrap}>
-                <a href="/">Home</a>
-                <a href="about">About</a>
-                <a href="contact">Contact</a>
-                <a href="news">News</a>
-                <a href="shop">Shop</a>
-            </div>
-    </div>)
+        <div ref={ref} className={styles.header}>
+            <Container className={styles.headerContainer}>
+                <img src={"/carlexdesign.png"} />
+                <div className={styles.navWrap}>
+                    <a href="/">Home</a>
+                    <a href="about">About</a>
+                    <a href="contact">Contact</a>
+                    <a href="news">News</a>
+                    <a href="shop">Shop</a>
+                </div>
+            </Container>
+        </div >
+    )
 }
 
 export default Header;
