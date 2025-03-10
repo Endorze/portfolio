@@ -6,8 +6,6 @@ const Home = () => {
         <>
         <div>
             <ParallaxSection />
-            <h1>Home</h1>
-            <img src="/carlexdesign.png" />
         </div>
         </>
     )
