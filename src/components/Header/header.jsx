@@ -1,7 +1,9 @@
 import styles from "./header.module.css"
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 const Header = () => {
+
+    const ref = useRef()
 
     useEffect(() => {
 
@@ -25,7 +27,7 @@ const Header = () => {
     }, [])
 
     return (
-    <div className={styles.header}>
+    <div ref={ref} className={styles.header}>
             <img src={"/carlexdesign.png"} />
             <div className={styles.navWrap}>
                 <a href="/">Home</a>
