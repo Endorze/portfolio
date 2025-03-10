@@ -22,7 +22,7 @@ const ParallaxSection = () => {
             <img src="/images/parallax/hill4.png" id="hill4"/>
             <img src="/images/parallax/hill5.png" id="hill5"/>
             <img src="/images/parallax/tree.png" id="tree"/>
-            <h2 id="text">Monster Hunter Wilds</h2>
+            <h2 id="text">Alexander H. Designs</h2>
             <img src="/images/parallax/leaf.png" id="leaf"/>
             <img src="/images/parallax/plant.png" id="plant"/>
         </div>
