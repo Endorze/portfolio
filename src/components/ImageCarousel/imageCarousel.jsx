@@ -15,6 +15,10 @@ const ImageCarousel = () => {
                         <a href="/" className="legend">Go to my Bethesda Page</a>
                     </div>
                     <div>
+                        <img src="/images/carousel/pokemon.png" alt="Slide 2" />
+                        <a href="https://endorze.github.io/pokemon-game/" className="legend">Play my pokemon fan-game!</a>
+                    </div>
+                    <div>
                         <img src="/images/carousel/summonerswar.jpg" alt="Slide 2" />
                         <a href="/" className="legend">Go to my Summoners-war Page</a>
                     </div>
