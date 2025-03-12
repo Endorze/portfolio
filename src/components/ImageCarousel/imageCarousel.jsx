@@ -4,11 +4,14 @@ import { Carousel } from 'react-responsive-carousel';
 import Container from '../Container/container';
 import styles from "./imageCarousel.module.css"
 
-const ImageCarousel = () => {
+const ImageCarousel = ({title, text}) => {
     return (
         <div>
             <Container>
-                <h2></h2>
+                <div className={styles.textSection}>
+                    <h2>{title}</h2>
+                    <p>{text}</p>
+                </div>
                 <Carousel className={styles.carousel}>
                     <div>
                         <img src="/images/carousel/bethesda.png" alt="Slide 1" />
