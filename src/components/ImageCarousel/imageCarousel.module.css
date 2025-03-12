@@ -1,6 +1,6 @@
 .textSection {
     margin-bottom: 15px;
-    max-width: 500px;
+    
 }
 
 .textSection p {
@@ -9,5 +9,6 @@
 
 .textSection h2 {
     text-transform: uppercase;
+    font-size: 1.5em;
     letter-spacing: .02em;
 }
