@@ -9,7 +9,7 @@ const Home = () => {
         <div>
             <ParallaxSection />
             <Container>
-                <ImageCarousel />
+                <ImageCarousel title={"Take a look at my Projects"} text={"I make my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed."}/>
                 <h2>Hej</h2>
             </Container>
         </div>

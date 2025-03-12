@@ -1,0 +1,13 @@
+.textSection {
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+.textSection p {
+    letter-spacing: .1em;
+}
+
+.textSection h2 {
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
