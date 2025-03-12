@@ -1,0 +1,49 @@
+.footer {
+    margin-top: auto;
+    min-height: 40vh;
+    background-color: #1E3A5F;
+    margin-top: 10rem;
+    color: #fff;
+}
+
+.footer h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.footer p {
+    font-size: .8rem;
+}
+
+.contactTitle {
+    font-size: 2em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3em;
+}
+
+.horizontal div {
+    display: flex;
+    flex-direction: column;
+}
+
+.generalInfo a, .services a, .media a, .copyright a {
+    text-decoration: none;
+    color: lightblue;
+    transition: .2s ease-in;
+}
+
+.generalInfo a:hover, .services a:hover, .media a:hover, .copyright a:hover {
+    color: white;
+}
+
+.copyright {
+    padding-bottom: 20px;
+}
