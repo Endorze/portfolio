@@ -12,6 +12,9 @@ const Home = () => {
             <Container>
                 <ImageCarousel title={"Take a look at my Projects"} text={"I make my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed."}/>
             </Container>
+            <h1 class="text-3xl font-bold underline">
+            Hello world!
+            </h1>
             <Footer />
         </div>
         </>
