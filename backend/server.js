@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import client from "./db.js";
+import contactForm from "./routes/contactForm.js"
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.post("/add-number", async (req, res) => {
         res.status(500).send("Serverfel");
     }
 })
+
+app.use("/api", contactForm);
 
 app.get('/get-numbers', async (req, res) => {
     try {

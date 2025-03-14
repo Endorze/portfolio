@@ -1,0 +1,98 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 60px;
+    max-width: 600px;
+
+    justify-content: center;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+
+.contactForm label {
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.contactForm * {
+    border-radius: 10px;
+}
+
+.contactForm h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.titleDescWrap {
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+.titleDescWrap p {
+    letter-spacing: .1em;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contactForm input, textarea {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.contactForm input::after {
+    border: none;
+}
+
+.contactForm textarea {
+    width: 100%;
+    min-height: 125px;
+    height: 100%;
+    resize: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.contactForm button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #1E3A5F;
+    color: #fff;
+    transition: 0.2s ease-in;
+}
+
+.contactForm button:hover {
+    background-color: #3c72b8;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .horizontal div {
+    flex: 1;
+  }
+  
+  .horizontal div input {
+    flex-basis: calc(50% - 18px);
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .vertical {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
