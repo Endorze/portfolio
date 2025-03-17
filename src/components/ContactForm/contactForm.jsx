@@ -1,6 +1,8 @@
+import ReCAPTCHA from "react-google-recaptcha";
 import Container from "../Container/container";
 import styles from "./contactForm.module.css"
 import { useState } from "react";
+
 
 const ContactForm = ({ title, desc }) => {
 
@@ -11,22 +13,41 @@ const ContactForm = ({ title, desc }) => {
         message: ""
     });
 
+    const [recaptchaToken, setRecaptchaToken] = useState(null);
+    const [message, setMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleRecaptcha = (token) => {
+        console.log("Got new recaptcha token", token)
+        setRecaptchaToken(token);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        console.log("Skickar data till backend: ", {...formData, recaptchaToken})
+
+        if (!recaptchaToken) {
+            setMessage("Vänligen verifiera att du inte är en robot.");
+            setLoading(false);
+            return;
+        }
 
         const response = await fetch("http://localhost:8080/api/send-form", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({...formData, recaptchaToken})
         });
 
+        console.log("Respons från server: ", {...formData, recaptchaToken})
         const data = await response.json();
         alert(data.message);
         setFormData({ name: "", lastName: "", email: "", message: "" });
+        setLoading(false);
     };
 
     return (
@@ -56,6 +77,8 @@ const ContactForm = ({ title, desc }) => {
                         <label htmlFor="message">Message:</label>
                         <textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Leave me a message..." />
                     </div>
+
+                    <ReCAPTCHA sitekey={`6Lev7_YqAAAAABQlNBmlIBG3TDJKljZ9P58uB0AH`} onChange={handleRecaptcha} />
 
                     <button type="submit">Send message</button>
                 </form>
