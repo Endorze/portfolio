@@ -38,6 +38,9 @@ const Header = () => {
                     <a href="news">News</a>
                     <a href="shop">Shop</a>
                 </div>
+                <div className={styles.buttonDiv}>
+                    <a href="createaccount"><button>Create Account</button></a>
+                </div>
             </Container>
         </div >
     )
