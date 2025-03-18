@@ -7,6 +7,7 @@ import Shop from "./pages/Shop/shop";
 import './App.css'
 import Header from "./components/Header/header";
 import HeaderLayout from "./components/HeaderLayout/headerLayout";
+import CreateAccount from "./pages/CreateAccount/createAccount";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/news" element={<News />}/>
           <Route path="/shop" element={<Shop />}/>
         </Route>
+          <Route path="/createaccount" element={<CreateAccount />}/>
       </Routes>
     </BrowserRouter>
     </>
