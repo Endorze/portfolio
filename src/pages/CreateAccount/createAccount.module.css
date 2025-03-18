@@ -1,8 +1,9 @@
 .createAccount {
     min-height: 100vh; 
-    padding-top: 5vh;
+    padding-top: 10vh;
     display: flex;
     flex-direction: column;
+    background-image: url("/public/images/createAccountPage/bgimage.png");
 }
 
 .createAccount a {

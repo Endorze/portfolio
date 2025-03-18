@@ -39,7 +39,7 @@ const CreateAccount = () => {
                     </div>
                 </div>
             </Container>
-                <div className={styles.gradient}></div>
+                {/* <div className={styles.gradient}></div> */}
         </div>
     )
 }
