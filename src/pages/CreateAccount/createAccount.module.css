@@ -1,12 +1,12 @@
 .createAccount {
     min-height: 100vh; 
-    padding-top: 10vh;
+    padding-top: 15vh;
     display: flex;
     flex-direction: column;
     background-image: url("/public/images/createAccountPage/bgimage.png");
 }
 
-.createAccount a {
+.textSection a {
     font-size: 1.2em;
 }
 
@@ -14,14 +14,54 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 600px;
     padding: 50px;
-    background-color: #f5f5f5;
-    height: 100%;
+    background-color: #fff;
+    height: 100%;    
+    box-shadow: 0px 0px 2px 0px rgba(129, 129, 129, 0.75);
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(129, 129, 129, 0.75);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(129, 129, 129, 0.75);
     border-radius: 5px;
-    box-shadow: 0px 0px 3px 0px rgba(129, 129, 129, 0.75);
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(129, 129, 129, 0.75);
-    -moz-box-shadow: 0px 0px 3px 0px rgba(129, 129, 129, 0.75);
+}
+
+.createAccountForm label, input {
+    font-size: 0.9em;
+}
+
+.alreadyAccount {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.textWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.textWrap h2 {
+    font-weight: 550;
+}
+
+.alreadyAccount p, a {
+    font-size: 1em;
+}
+
+.createAccount a {
+    color: #93bef7;
+}
+
+.createAccount a:hover {
+    color: #75a9ec;
+}
+
+.createAccount h1 {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .textSection {
@@ -32,27 +72,50 @@
     height: 100%;
 }
 
+.textSection img {
+    margin-top: auto;
+}
+
+.acceptTerms {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.acceptTerms p {
+    font-size: 0.8em;
+}
+
+.acceptTerms input {
+    box-shadow: none;
+}
+
 .createAccountForm h2 {
-    font-size: 2em;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .createAccountForm input {
-    border: 1px solid #ccc;
+    /* border: 0.5px solid #ccc; */
     padding: 5px 10px;
-    box-shadow: 0px 0px 1px 0px rgba(129, 129, 129, 0.75);
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(129, 129, 129, 0.75);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(129, 129, 129, 0.75);
+    box-shadow: 0px 0px 1px 0px rgb(78, 78, 78);
+    -webkit-box-shadow: 0px 0px 1px 0px rgb(78, 78, 78);
+    -moz-box-shadow: 0px 0px 1px 0px rgb(78, 78, 78);
     border-radius: 5px;
 }
 
 .createAccountForm button {
     padding: 10px 0px;
     width: 100%;
-    background-color: #1E3A5F;
+    border-radius: 5px;
+    background-color: #93bef7;
     margin-left: auto;
     color: #fff;
+}
+
+.createAccountForm button:hover {
+    background-color: #75a9ec;
 }
 
 .gradient {
@@ -67,7 +130,7 @@
 }
 
 .horizontalWrap div {
-    flex-basis: calc(50%);
+    flex-basis: calc(38%);
 }
 
 .vertical {
