@@ -31,7 +31,7 @@ const CreateAccount = () => {
         })
 
         console.log("Response from server: ", response);
-        setAccountData({username: "", password: "", message: ""})
+        setAccountData({username: "", password: "", email: ""})
     }
 
     return (
