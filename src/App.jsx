@@ -8,6 +8,7 @@ import './App.css'
 import Header from "./components/Header/header";
 import HeaderLayout from "./components/HeaderLayout/headerLayout";
 import CreateAccount from "./pages/CreateAccount/createAccount";
+import Login from "./pages/Login/login";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/shop" element={<Shop />}/>
         </Route>
           <Route path="/createaccount" element={<CreateAccount />}/>
+          <Route path="/login" element={<Login />}/>
       </Routes>
     </BrowserRouter>
     </>

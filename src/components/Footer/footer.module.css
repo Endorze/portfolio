@@ -1,7 +1,7 @@
 .footer {
     margin-top: auto;
     min-height: 40vh;
-    background-color: #1E3A5F;
+    background-color: var(--header-footer-color);
     margin-top: 10rem;
     color: #fff;
 }

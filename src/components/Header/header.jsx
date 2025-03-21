@@ -40,6 +40,7 @@ const Header = () => {
                 </div>
                 <div className={styles.buttonDiv}>
                     <a href="createaccount"><button>Create Account</button></a>
+                    <a href="createaccount"><button>Login</button></a>
                 </div>
             </Container>
         </div >
