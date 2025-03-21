@@ -83,6 +83,7 @@ router.post("/login", async (req, res) => {
 
     try {
         const { password, email } = req.body;
+
         if (!email || !password) {
             return res.status(400).json({ message: "Lösenord eller Användarnamn saknas." })
         }

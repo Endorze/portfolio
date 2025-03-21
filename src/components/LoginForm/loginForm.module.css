@@ -12,20 +12,20 @@
     font-size: 1.2em;
 }
 
-.createAccountForm {
+.loginForm {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     padding: 50px;
     background-color: #fff;
-    height: 100%;    
+    min-height: 500px;
+    justify-content: space-evenly;    
     box-shadow: 0px 0px 2px 0px rgba(129, 129, 129, 0.75);
     -webkit-box-shadow: 0px 0px 2px 0px rgba(129, 129, 129, 0.75);
     -moz-box-shadow: 0px 0px 2px 0px rgba(129, 129, 129, 0.75);
     border-radius: 5px;
 }
 
-.createAccountForm label, input {
+.loginForm label, input {
     font-size: 0.9em;
 }
 
@@ -93,12 +93,17 @@
     box-shadow: none;
 }
 
-.createAccountForm h2 {
+.loginForm h2 {
     font-size: 1.5em;
     font-weight: bold;
 }
 
-.createAccountForm input {
+.login {
+    max-width: 42%;
+    margin: auto;
+}
+
+.loginForm input {
     /* border: 0.5px solid #ccc; */
     padding: 5px 10px;
     box-shadow: 0px 0px 1px 0px rgb(78, 78, 78);
@@ -107,7 +112,7 @@
     border-radius: 5px;
 }
 
-.createAccountForm button {
+.loginForm button {
     padding: 10px 0px;
     width: 100%;
     border-radius: 5px;
@@ -116,23 +121,8 @@
     color: #fff;
 }
 
-.createAccountForm button:hover {
-    background-color: var(--form-link-hover);
-}
-
-.gradient {
-    overflow: hidden;
-}
-
-.horizontalWrap {
-    display: flex;
-    justify-content: space-evenly;
-    flex: 1;
-    gap: 30px;
-}
-
-.horizontalWrap div {
-    flex-basis: calc(38%);
+.loginForm button:hover {
+    background-color: var(--button-hover);
 }
 
 .vertical {
@@ -140,41 +130,3 @@
     flex-direction: column;
 }
 
-@keyframes waveAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes colorShift {
-    0% {
-        background: linear-gradient(135deg, #29C7B6, #F4A62D, #E2A136, #8B9049);
-    }
-    25% {
-        background: linear-gradient(135deg, #3B7DDD, #FC67FA, #FF9966, #00E9BA);
-    }
-    50% {
-        background: linear-gradient(135deg, #6B50FF, #FA8C8C, #FBE677, #48C9B0);
-    }
-    75% {
-        background: linear-gradient(135deg, #3B7DDD, #FC67FA, #FF9966, #00E9BA);
-    }
-    100% {
-        background: linear-gradient(135deg, #29C7B6, #F4A62D, #E2A136, #8B9049);
-    }
-}
-
-
-.gradient::after {
-    content: "";
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%; /* Gradienten tar 20% av höjden */
-    background: linear-gradient(135deg, #29C7B6, #F4A62D, #E2A136, #8B9049);
-    background-size: 400% 400%;
-    animation: waveAnimation 10s ease-in-out infinite alternate, 
-               colorShift 16s ease-in-out infinite alternate;
-    transition: background 2s ease-in-out;
-}
