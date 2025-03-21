@@ -7,6 +7,11 @@
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --header-footer-color: #1E3A5F;
+  --button-color: #93bef7;
+  --button-hover: #75a9ec;
+  --form-link-color: #93bef7;
+  --form-link-hover: #75a9ec;
 }
 
 html, body {
