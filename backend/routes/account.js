@@ -3,7 +3,6 @@ import client from "../db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-
 const router = express.Router();
 
 const createUser = async (username, password, email) => {
@@ -93,6 +92,8 @@ router.post("/login", async (req, res) => {
         if (!result.success) {
             return res.status(400).json({ error: result.message });
         }
+
+        console.log("Login token: ", result.token);
 
         return res.json({ message: result.message, token: result.token });
 
