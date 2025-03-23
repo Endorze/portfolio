@@ -3,7 +3,6 @@ import client from "../db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-
 const router = express.Router();
 
 const createUser = async (username, password, email) => {

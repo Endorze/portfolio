@@ -1,8 +1,17 @@
 import Container from "../Container/container"
 import styles from "./header.module.css"
 import { useEffect, useRef } from 'react'
+import { useSelector, useDispatch } from "react-redux"
+import { logout } from "../../store/authSlice"
 
 const Header = () => {
+
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const dispatch = useDispatch()
+
+    const handleLogout = () => {
+        dispatch(logout());
+    };
 
     const ref = useRef()
 
@@ -38,10 +47,22 @@ const Header = () => {
                     <a href="news">News</a>
                     <a href="shop">Shop</a>
                 </div>
-                <div className={styles.buttonDiv}>
-                    <a href="createaccount"><button>Create Account</button></a>
-                    <a href="createaccount"><button>Login</button></a>
-                </div>
+                {isLoggedIn ? (
+                    <>
+                        <div className={styles.buttonDiv}>
+                            <a href="createaccount"><button>My Profile</button></a>
+                            <a href="createaccount"><button>Logout</button></a>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className={styles.buttonDiv}>
+                            <a href="createaccount"><button>Create Account</button></a>
+                            <a href="createaccount"><button>Login</button></a>
+                        </div>
+                    </>
+                ) }
+                
             </Container>
         </div >
     )
