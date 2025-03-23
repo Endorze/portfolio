@@ -1,8 +1,14 @@
 import {useState} from "react";
 import Container from "../Container/container";
 import styles from "./loginForm.module.css"
+import { useDispatch } from "react-redux";
+import { login } from "../../store/authSlice.js";
+
+
 
 const LoginForm = () => {
+
+    const dispatch = useDispatch();
 
     const [accountData, setAccountData] = useState({
             email: "",
@@ -26,6 +32,12 @@ const LoginForm = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({...accountData}),
             })
+
+            const data = await response.json();
+
+            if (data.token) {
+                dispatch(login(data.token));
+            }
     
             console.log("Response from server: ", response);
             setAccountData({username: "", password: "", email: ""})
