@@ -94,6 +94,8 @@ router.post("/login", async (req, res) => {
             return res.status(400).json({ error: result.message });
         }
 
+        console.log("Login token: ", result.token);
+
         return res.json({ message: result.message, token: result.token });
 
     } catch (err) {
