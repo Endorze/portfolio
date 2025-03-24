@@ -15,7 +15,7 @@ const ParallaxSection = () => {
 
     return (
         <div className={styles.parallax}>
-            <img src="https://cdn.prod.website-files.com/6768f29a6d5da42209173f20/6768f29b6d5da4220917749c_Rectangle%20(1).svg"/>
+            <img src="https://images.unsplash.com/photo-1483401757487-2ced3fa77952?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMGJsdWUlMjBza3l8ZW58MHx8MHx8fDA%3D"/>
             <img src="/images/parallax/hill1.png" id="hill1"/>
             <img src="/images/parallax/hill2.png" id="hill2"/>
             <img src="/images/parallax/hill3.png" id="hill3"/>
