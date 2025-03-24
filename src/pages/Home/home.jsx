@@ -14,9 +14,9 @@ const Home = () => {
         <div>
             <ParallaxSection />
             <Container>
-                <ImageCarousel title={"Take a look at my Projects"} text={"I make my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed."}/>
+                <ImageCarousel title={"View my Projects"} text={"I craft my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed. To combine my hobbies of programming and gaming."}/>
             </Container>
-            <Test />
+            {/* <Test /> */}
             <Container>
                 <ContactForm title={"I'd love to help"} desc={"Usually responding within 24 Hours"}/>
             </Container>
