@@ -1,14 +1,17 @@
 .textSection {
     margin-bottom: 15px;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    max-width: 600px;
 }
 
-.textSection p {
-    letter-spacing: .1em;
+.textSection h2, .randomFact h2 {
+    font-size: 2em;
 }
 
-.textSection h2 {
-    text-transform: uppercase;
-    font-size: 1.5em;
-    letter-spacing: .02em;
+.horizontal {
+    display: flex;
+    gap: 40px;
 }
