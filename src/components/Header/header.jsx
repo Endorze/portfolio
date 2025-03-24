@@ -51,14 +51,14 @@ const Header = () => {
                     <>
                         <div className={styles.buttonDiv}>
                             <a href="createaccount"><button>My Profile</button></a>
-                            <a href="createaccount"><button>Logout</button></a>
+                            <a href="login"><button onClick={handleLogout}>Logout</button></a>
                         </div>
                     </>
                 ) : (
                     <>
                         <div className={styles.buttonDiv}>
                             <a href="createaccount"><button>Create Account</button></a>
-                            <a href="createaccount"><button>Login</button></a>
+                            <a href="login"><button>Login</button></a>
                         </div>
                     </>
                 ) }

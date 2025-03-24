@@ -11,7 +11,8 @@
 
 .header a:hover {
   transition: 0.1s ease-in;
-  transform: scale(1.1);
+  transform: scale(1.02);
+  color: #d9d9d9;
 }
 
 .navWrap {
