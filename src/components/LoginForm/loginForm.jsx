@@ -3,12 +3,13 @@ import Container from "../Container/container";
 import styles from "./loginForm.module.css"
 import { useDispatch } from "react-redux";
 import { login } from "../../store/authSlice.js";
-
+import { useNavigate } from "react-router-dom";
 
 
 const LoginForm = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [accountData, setAccountData] = useState({
             email: "",
@@ -37,6 +38,7 @@ const LoginForm = () => {
 
             if (data.token) {
                 dispatch(login(data.token));
+                navigate("/");
             }
     
             console.log("Response from server: ", response);
@@ -64,7 +66,7 @@ const LoginForm = () => {
                         </div>
                         <div className={styles.alreadyAccount}>
                             <p>Dont have an account?</p>
-                            <a href="/login">Create Account</a>
+                            <a href="/createaccount">Create Account</a>
                         </div>
                     </form>
                 </div>
