@@ -12,7 +12,6 @@ import Login from "./pages/Login/login";
 function App() {
 
   return (
-    <>
       <Routes>
         <Route element={<HeaderLayout />}>
           <Route path="/" element={<Home />}/>
@@ -24,7 +23,6 @@ function App() {
           <Route path="/createaccount" element={<CreateAccount />}/>
           <Route path="/login" element={<Login />}/>
       </Routes>
-    </>
   )
 }
 
