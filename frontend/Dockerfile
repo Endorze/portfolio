@@ -1,19 +1,30 @@
-# backend/Dockerfile
-FROM node:18
+# Step 1: Build the React app
+FROM node:22 as build
 
+# Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY ./package*.json ./
-RUN npm install
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm ci
 
-# Copy backend-kod
+# Copy rest of the app
 COPY . .
 
-# Copy build från frontend (som nu ligger i ../build)
-COPY ../dist ./frontend-dist
+# Build the app
+RUN npm run build
 
-RUN npm install serve
+# Step 2: Serve the app with nginx
+FROM nginx:alpine
 
-EXPOSE 8080
-CMD ["node", "server.js"]
+# Copy built app from previous stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Optional: Replace default nginx config if needed
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
