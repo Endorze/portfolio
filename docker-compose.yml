@@ -1,0 +1,55 @@
+
+services:
+  database:
+    image: postgres
+    restart: always
+    env_file: .env
+    environment:
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $DB_DATABASE
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - shared-network
+    ports:
+      - "51234:5432"
+
+  backend:
+    restart: always
+    env_file: .env
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    environment:
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+      DB_DB: $DB_DATABASE
+      EMAIL: $EMAIL
+      EMAIL_PASSWORD: $EMAIL_PASSWORD
+      RECAPTCHA_SECRET: $RECAPTCHA_SECRET
+      JWT_SECRET: $JWT_SECRET
+      JWT_EXPIRES_IN: $JWT_EXPIRES_IN
+    ports:
+      - 51235:8080
+    networks:
+      - shared-network
+
+  frontend:
+    restart: always
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "51236:80"
+
+networks:
+  shared-network:
+    driver: bridge
+
+volumes:
+  dbdata:

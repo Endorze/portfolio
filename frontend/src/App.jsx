@@ -12,17 +12,17 @@ import Login from "./pages/Login/login";
 function App() {
 
   return (
-      <Routes>
-        <Route element={<HeaderLayout />}>
-          <Route path="/" element={<Home />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/news" element={<News />}/>
-          <Route path="/shop" element={<Shop />}/>
-        </Route>
-          <Route path="/createaccount" element={<CreateAccount />}/>
-          <Route path="/login" element={<Login />}/>
-      </Routes>
+    <Routes>
+      <Route element={<HeaderLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/shop" element={<Shop />} />
+      </Route>
+      <Route path="/createaccount" element={<CreateAccount />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   )
 }
 
