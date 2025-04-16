@@ -17,7 +17,7 @@
 html, body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: rgb(148, 148, 148);
+  background-color: rgb(255, 255, 255);
 }
 
 * {

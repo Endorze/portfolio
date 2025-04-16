@@ -23,3 +23,7 @@
     object-fit: cover;
     object-position: center;
 }
+
+.carousel .slide img {
+    height: 100%;
+}

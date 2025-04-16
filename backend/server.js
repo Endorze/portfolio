@@ -3,6 +3,11 @@ import cors from "cors";
 import client from "./db.js";
 import contactForm from "./routes/contactForm.js"
 import account from "./routes/account.js"
+import path from "path";
+import { fileURLToPath } from "url";
+import flyway from "./flyway.js"
+
+flyway.migrate()
 
 const app = express();
 
@@ -39,40 +44,14 @@ app.get('/get-numbers', async (req, res) => {
     }
   });
 
-// app.get("/", (req, res) => {
-//     res.json({
-//         blogPost: [
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//             {
-//                 title: "The journey of a Thousand Miles",
-//                 content: "An exploration of the importance of taking the first step in any journey.",
-//             },
-//         ]
-//     })
-// })
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, "../dist")));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../dist", "index.html"));
+});
+
 
 app.listen("8080", () => {
     console.log("Server started on port 8080")
