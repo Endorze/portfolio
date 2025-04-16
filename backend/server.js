@@ -5,6 +5,9 @@ import contactForm from "./routes/contactForm.js"
 import account from "./routes/account.js"
 import path from "path";
 import { fileURLToPath } from "url";
+import flyway from "./flyway.js"
+
+flyway.migrate()
 
 const app = express();
 
