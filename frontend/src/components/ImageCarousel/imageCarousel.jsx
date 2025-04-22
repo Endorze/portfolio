@@ -6,16 +6,15 @@ import styles from "./imageCarousel.module.css"
 
 const ImageCarousel = ({title, text}) => {
     return (
-        <div>
-            <Container>
+        <div className={styles.carouselBody}>
                 <div className={styles.horizontal}>
                     <div className={styles.textSection}>
                         <h2>{title}</h2>
                         <p>{text}</p>
                     </div>
                     <div className={styles.randomFact}>
-                        <h2>Random fact about me</h2>
-                        <p>Before i decided on a career as a programmer, i actually spent my years working as a salesman... Worst time spent ever, glad to have found my true passion now!</p>    
+                        <h2>Random Fact About Me</h2>
+                        <p>Before i decided on a career as a programmer, <em>i actually spent my years working as a salesman...</em> Worst time spent ever, glad to have found my true calling!</p>    
                     </div>
                 </div>
                 <Carousel className={styles.carousel}>
@@ -48,7 +47,7 @@ const ImageCarousel = ({title, text}) => {
                         <a href="http://endorze.org:81/" className="legend">Ps... Page does not load content without downloading the screenreader for Albion</a>
                     </div>
                 </Carousel>
-            </Container>
+        
         </div>
     );
 }
