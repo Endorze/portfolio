@@ -8,6 +8,8 @@
   line-height: 1.5;
   font-weight: 400;
   --header-footer-color: #041c3b;
+  --section-distance: 80px;
+  --title-color: #4978b6;
   --button-color: #93bef7;
   --button-hover: #75a9ec;
   --form-link-color: #93bef7;
