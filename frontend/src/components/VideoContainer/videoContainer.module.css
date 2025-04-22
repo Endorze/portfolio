@@ -1,0 +1,22 @@
+.videoContainer {
+    background-color: rgb(223, 223, 223);
+}
+
+.myMasonryGrid {
+    display: flex;
+    margin-left: -15px;
+    width: auto;
+  }
+  .myMasonryGridColumn {
+    padding-left: 1.5rem;
+    background-clip: padding-box;
+  }
+  
+  .myMasonryGridColumn > div {
+    margin-bottom: 1.5rem;
+  }
+
+  .waterfallWrap {
+    padding: 2.5rem;
+  }
+  
