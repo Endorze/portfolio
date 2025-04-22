@@ -8,7 +8,9 @@
 }
 
 .textSection h2, .randomFact h2 {
-    font-size: 2em;
+    font-size: 1.5em;
+    color: var(--title-color);
+    font-weight: bold;
 }
 
 .horizontal {

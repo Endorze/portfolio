@@ -5,6 +5,7 @@ import ImageCarousel from "../../components/ImageCarousel/imageCarousel";
 import MarketerSection from "../../components/MarketerSection/marketerSection";
 import ParallaxSection from "../../components/ParallaxSection/parallaxSection";
 import Test from "../../components/Test/test";
+import VideoContainer from "../../components/VideoContainer/videoContainer";
 import styles from "./home.module.css";
 
 
@@ -15,9 +16,10 @@ const Home = () => {
         <div>
             <ParallaxSection />
             <Container>
-                <ImageCarousel title={"View my Projects"} text={"I craft my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed. To combine my hobbies of programming and gaming."}/>
+                <ImageCarousel title={"View My Projects"} text={"I craft my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed. To combine my hobbies of programming and gaming."}/>
             </Container>
                 <MarketerSection />
+                <VideoContainer />
             <Footer />
         </div>
         </>

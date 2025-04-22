@@ -57,8 +57,8 @@ const Header = () => {
                 ) : (
                     <>
                         <div className={styles.buttonDiv}>
-                            <a href="createaccount"><button>Create Account</button></a>
-                            <a href="login"><button>Login</button></a>
+                            <a href="createaccount"><button>Sign Up</button></a>
+                            <a className={styles.login} href="login"><button>Login</button></a>
                         </div>
                     </>
                 ) }
