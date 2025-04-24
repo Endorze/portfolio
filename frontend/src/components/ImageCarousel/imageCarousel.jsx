@@ -3,17 +3,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Container from '../Container/container';
 import styles from "./imageCarousel.module.css"
+import H2Title from '../H2Title/h2Title';
 
 const ImageCarousel = ({title, text}) => {
     return (
         <div className={styles.carouselBody}>
                 <div className={styles.horizontal}>
                     <div className={styles.textSection}>
-                        <h2>{title}</h2>
+                        <H2Title text={title}/>
                         <p>{text}</p>
                     </div>
                     <div className={styles.randomFact}>
-                        <h2>Random Fact About Me</h2>
+                        <H2Title text={"Random Fact About Me"}/>
                         <p>Before i decided on a career as a programmer, <em>i actually spent my years working as a salesman...</em> Worst time spent ever, glad to have found my true calling!</p>    
                     </div>
                 </div>
@@ -27,11 +28,11 @@ const ImageCarousel = ({title, text}) => {
                         <a href="https://zoo-react-project.vercel.app/" className="legend">Go to my Zoo-page</a>
                     </div>
                     <div>
-                        <img src="/images/carousel/pokemon.png" alt="Slide 3" />
+                        <img src="/images/carousel/pokemonbattle.png" alt="Slide 3" />
                         <a href="https://endorze.github.io/pokemon-game/" className="legend">Play my pokemon fan-game!</a>
                     </div>
                     <div>
-                        <img src="/images/carousel/summonerswar.jpg" alt="Slide 4" />
+                        <img src="/images/carousel/summonerswar.png" alt="Slide 4" />
                         <a href="https://express-multipage-assignment2.vercel.app/" className="legend">Go to my Summoners-war Page</a>
                     </div>
                     <div>
