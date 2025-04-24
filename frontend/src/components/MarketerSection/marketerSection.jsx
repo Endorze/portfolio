@@ -6,7 +6,7 @@ const MarketerSection = () => {
     return (
         <div className={styles.MarketSection}>
             <div>
-                <h2>How Does Marketers Use Endorze?</h2>
+                <h2>How Do Marketers Use Endorze</h2>
                 <p>Learn how SEOs, Digital and Content Marketers, and Executives see the market and capitilize on opportunities.</p>
             </div>
             <div className={styles.portraitSection}>
