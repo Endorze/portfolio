@@ -13,6 +13,7 @@
 
 .MarketSection h2 {
     font-weight: bold;
+    color: var(--title-color);
     font-size: 2em;
 }
 
