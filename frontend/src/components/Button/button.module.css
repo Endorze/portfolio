@@ -1,11 +1,13 @@
 .button {
     padding: 8px 16px;
     color: white;
-    background-color: var(--button-color);
+    /* background-color: var(--button-color); */
+    background-color: #3b82f6;
     width: fit-content;
 }
 
 .button:hover {
     transition: 0.2s ease-in;
-    background-color: var(--button-hover);
+    /* background-color: var(--button-hover); */
+    background-color: #2563eb;
 }
