@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(235, 235, 235);
+    /* background-color: rgb(235, 235, 235); */
+    background-color: #f7f7f7;
     padding: 48px;
     gap: 48px;
     margin-top: var(--section-distance);
@@ -22,4 +23,5 @@
     padding-right: 1.25rem;
     max-width: 1220px;
     width: 100%;
+    justify-content: space-between;
 }

@@ -14,7 +14,6 @@ const MarketerSection = () => {
                 <Portrait title={"Content & Digital Marketers"} desc={"Create high-performing content that customers can find and love."} imgPath={"/images/portraits/morris.jpg"} interviewText={"It helps us to discover those opportunities that are hidden just beneath the surface."} name={"Morris Hallgren"} companyLogoPath={"/images/portraits/wayne.png"} />
                 <Portrait title={"Executives"} desc={"Endorze enables us to identify problems most people didn't know existed."} imgPath={"/images/portraits/michael.jpg"} interviewText={"The Endorze platform enables us to identify problems most people didnt know existed."} name={"Michael Scott"} companyLogoPath={"/images/portraits/dunder.png"} />
             </div>
-            <Button text={"Learn More"} />
         </div>
     )
 }
