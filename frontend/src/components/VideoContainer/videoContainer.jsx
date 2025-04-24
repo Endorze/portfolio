@@ -2,10 +2,10 @@ import Rating from "react-rating"
 import VideoItem from "../VideoItem/videoItem";
 import Masonry from 'react-masonry-css';
 import styles from "./videoContainer.module.css";
+import Container from "../Container/container";
+import H2Title from "../H2Title/h2Title";
 
-const VideoContainer = () => {
-
-    const items = ["/videos/portfoliovideos/bethesda.mp4", "/images/carousel/zooreact.png", "/videos/portfoliovideos/zoo.mp4", "/images/carousel/avalon.png", "/images/carousel/bethesda.png", "/videos/gamingvideo/cs.mp4", "/images/carousel/hero.jpg", "/images/carousel/kantherm.png", "/images/carousel/pokemon.png", "/images/carousel/summonerswar.jpg", "/videos/portfoliovideos/pokemon.mp4",];
+const VideoContainer = ({list, title, project}) => {
 
     const breakpointColumnsObj = {
         default: 3,
@@ -17,19 +17,15 @@ const VideoContainer = () => {
 
     return (
         <div className={styles.videoContainer}>
+            <Container>
+                <H2Title text={title}/>
+                <p>{project}</p>
+            </Container>
             <div className={styles.waterfallWrap}>
-            <h2>Some of my work</h2>
-            <Rating
-                initialRating={3}
-                emptySymbol={<span style={{ fontSize: '2rem', color: '#ccc' }}>☆</span>}
-                fullSymbol={<span style={{ fontSize: '2rem', color: 'gold' }}>★</span>}
-                onChange={(value) => console.log('Rated:', value)}
-            />
-
             <Masonry breakpointCols={breakpointColumnsObj}
                 className={styles.myMasonryGrid}
                 columnClassName={styles.myMasonryGridColumn}>
-                {items.map((item, index) => (
+                {list.map((item, index) => (
                     <div key={index}>
                         <VideoItem src={item} />
                     </div>
