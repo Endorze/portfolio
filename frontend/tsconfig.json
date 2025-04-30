@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es2016",                    // JS-version: ok för moderna browsers
+    "jsx": "react-jsx",                    // ✅ Aktivera JSX-stöd för React (ny transform med React 17+)
+
+    /* Modules */
+    "module": "commonjs",                  // Vanligt för Node, ändra till "esnext" om du kör Vite/Next.js
+    "moduleResolution": "node",            // ✅ Viktigt för att resolva moduler som React, Redux etc.
+    "resolveJsonModule": true,             // ✅ Tillåter import av JSON-filer
+
+    /* Interop Constraints */
+    "esModuleInterop": true,               // ✅ Gör CommonJS-moduler kompatibla med ES-imports
+    "allowSyntheticDefaultImports": true,  // ✅ Låter dig använda t.ex. `import React from "react"`
+    
+    /* Build Behaviour */
+    "isolatedModules": true,               // ✅ Säkerställer att varje fil kan transpileras isolerat
+
+    /* Type Checking */
+    "strict": true,                        // ✅ Aktivera strikt typkontroll (bra praxis)
+    "forceConsistentCasingInFileNames": true, // ✅ Hindrar filnamn från att skilja på versaler/gemener
+    "skipLibCheck": true,                   // ✅ Snabbar upp build genom att hoppa över .d.ts-filer
+    "noEmit": true
+  },
+  "include": ["src"],                      // ✅ Inkludera din källkods-mapp, anpassa om det behövs
+  "exclude": ["node_modules"]              // ✅ Undvik att kolla beroenden
+}
