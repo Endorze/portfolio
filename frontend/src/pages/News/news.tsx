@@ -1,6 +1,7 @@
 import styles from "./news.module.css"
+import { FC } from "react";
 
-const News = () => {
+const News: FC = () => {
     return (
         <>
           <div>

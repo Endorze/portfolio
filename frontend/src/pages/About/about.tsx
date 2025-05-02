@@ -1,6 +1,8 @@
 import styles from "./about.module.css"
+import { FC } from "react";
 
-const About = () => {
+
+const About: FC = () => {
     return (
         <>
           <div>

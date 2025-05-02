@@ -1,8 +1,9 @@
+import { FC } from "react";
 import { useState } from "react";
 import Container from "../../components/Container/container";
 import styles from "./createAccount.module.css"
 
-const CreateAccount = () => {
+const CreateAccount: FC = () => {
 
     const [accountData, setAccountData] = useState({
         username: "",
@@ -12,11 +13,11 @@ const CreateAccount = () => {
 
     const [terms, setTerms] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setAccountData({...accountData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Skickar konto data till backend", {accountData})
 
