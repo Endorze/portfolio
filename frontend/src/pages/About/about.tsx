@@ -1,13 +1,15 @@
-import styles from "./about.module.css"
+import Header from "../../components/Header/header";
 import { FC } from "react";
+import ParallaxSection from "../../components/ParallaxSection/parallaxSection";
 
 
 const About: FC = () => {
     return (
         <>
-          <div>
-            <h1>About</h1>
-        </div>
+            <div>
+                <Header />
+                <ParallaxSection />
+            </div>
         </>
     )
 }
