@@ -1,14 +1,13 @@
+import { FC } from "react";
 import Container from "../../components/Container/container";
 import Footer from "../../components/Footer/footer";
 import ImageCarousel from "../../components/ImageCarousel/imageCarousel";
 import MarketerSection from "../../components/MarketerSection/marketerSection";
 import ParallaxSection from "../../components/ParallaxSection/parallaxSection";
 import PokemonSection from "../../components/PokemonSection/pokemonSection";
-import VideoContainer from "../../components/VideoContainer/videoContainer";
-import { pokemonPaths } from "../../data/pokemondata";
 
 
-const Home = () => {
+const Home: FC = () => {
 
     return (
         <>

@@ -1,19 +1,26 @@
 import styles from "./videoItem.module.css"
 
-const VideoItem = ({ src, width = 560, height = 315 }) => {
+type Props = {
+    src: string,
+    width?: number,
+    height?: number
+}
+
+const VideoItem = ({ src, width = 560, height = 315 }: Props) => {
     const isYoutube = src.includes('youtube.com') || src.includes('youtu.be');
     const isMp4 = src.includes('.mp4')
+    let embedUrl: string | undefined;
 
     if (isYoutube) {
-        const getYoutubeEmbedUrl = (url) => {
+        const getYoutubeEmbedUrl = (url: string) => {
             try {
                 const videoId = new URL(url).searchParams.get('v') || url.split('/').pop();
                 return `https://www.youtube.com/embed/${videoId}`;
             } catch (e) {
-                return url;
+                return undefined;
             }
         }
-        const embedUrl = getYoutubeEmbedUrl(src);
+        embedUrl = getYoutubeEmbedUrl(src);
     }
 
     return (

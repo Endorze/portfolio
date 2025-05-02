@@ -1,8 +1,8 @@
-import styles from "./contact.module.css"
+import { FC } from "react";
 import Container from "../../components/Container/container";
 import ContactForm from "../../components/ContactForm/contactForm";
 
-const Contact = () => {
+const Contact: FC = () => {
     return (
         <div>
             <h1>Contact</h1>

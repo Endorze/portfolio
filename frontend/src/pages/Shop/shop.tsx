@@ -1,6 +1,7 @@
 import styles from "./shop.module.css"
+import { FC } from "react";
 
-const Shop = () => {
+const Shop: FC = () => {
     return (
         <>
           <div>

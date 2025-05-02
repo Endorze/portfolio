@@ -5,7 +5,7 @@ import Container from "../Container/container";
 import H2Title from "../H2Title/h2Title";
 
 type Props = {
-    list: string,
+    list: string[],
     title: string,
     project: string
 }
