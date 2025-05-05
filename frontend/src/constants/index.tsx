@@ -163,7 +163,15 @@ export const features = [
     },
   ];
   
-  export const testimonials = [
+  export type TestimonialProps = {
+    id: string,
+    name: string,
+    role: string,
+    avatarUrl: string,
+    comment: string
+  }
+
+  export const testimonials: TestimonialProps[] = [
     {
       id: '0',
       name: 'Jessica Saunders',
