@@ -19,7 +19,7 @@ const Hero = () => {
                         </LinkScroll>
                     </div>
                     <div className="absolute -top-32 left-[calc(50%-340px)] w-[1230px] hero-img_res">
-                        <img src="/images/hero.png" className="size-1230 max-lg:h-auto" alt="hero"/>
+                        <img src="/images/newlogo.png" className="size-1230 max-lg:h-auto" alt="hero"/>
                     </div>
                 </div>
             </Element>
