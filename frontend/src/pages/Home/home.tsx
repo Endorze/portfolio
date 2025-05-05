@@ -8,6 +8,7 @@ import Hero from "../../components/Hero/hero";
 import Features from "../../components/Features/features";
 import Pricing from "../../components/Pricing/pricing";
 import Faq from "../../components/Faq/faq";
+import Testimonials from "../../components/Testimonial/testimonial";
 
 
 const Home: FC = () => {
@@ -23,6 +24,7 @@ const Home: FC = () => {
             <MarketerSection />
             <PokemonSection />
             <Faq />
+            <Testimonials />
             <Footer />
         </div>
     )
