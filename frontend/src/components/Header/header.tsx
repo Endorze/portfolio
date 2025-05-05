@@ -45,13 +45,13 @@ const Header = () => {
                                 <li className="nav-logo">
                                     <LinkScroll to="hero"
                                     offset={-250} spy smooth className={clsx("max-lg:hidden transition-transform duration-500 cursor-pointer")}>
-                                        <img src="/images/xora.svg" width={160} height={55} alt="logo"></img>
+                                        <img src="/images/carlexlogo.png" width={160} height={55} alt="logo"></img>
                                     </LinkScroll>
                                 </li>
                                 <li className="nav-li">
                                     <NavLink title="faq" />
                                     <div className="dot" />
-                                    <NavLink title="download" />
+                                    <NavLink title="testimonials" />
                                 </li>
                             </ul>
                         </nav>
