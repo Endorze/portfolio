@@ -45,8 +45,14 @@ export const features = [
       title: '24 / 7 Customer support',
     },
   ];
+
+  export type FaqProps = {
+    id: string,
+    question: string,
+    answer: string
+  }
   
-  export const faq = [
+  export const faq: FaqProps[] = [
     {
       id: '0',
       question: 'How easy is it to setup Xora?',
