@@ -3,6 +3,7 @@ import { details, features } from "../../constants";
 import CustomButton from "../CustomButton/customButton";
 
 const Features = () => {
+
     return (
         <section>
             <Element name="features">
@@ -20,7 +21,7 @@ const Features = () => {
                                 <p className="caption mb-5 max-md:mb-6">{caption}</p>
                                 <h2 className="max-w-400 mb-7 h3 text-p4 max-md:mb-6 max-md:h5">{title}</h2>
                                 <p className="mb-11 body-1 max-md:mb-8 max-md:body-3">{text}</p>
-                                <CustomButton icon={button.icon}>{button.title}</CustomButton>
+                                <CustomButton href={button.href} icon={button.icon}>{button.title}</CustomButton>
                             </div>
                         ))}
                         <ul className="relative flex justify-around flex-grow px-[5%] border-2 border-s3 rounded-7xl max-md:hidden">

@@ -8,6 +8,7 @@ export const features = [
       button: {
         icon: '/images/magictouch.svg',
         title: 'Create Account',
+        href: "createaccount"
       },
     },
     {
@@ -19,6 +20,7 @@ export const features = [
       button: {
         icon: '/images/docs.svg',
         title: 'login account',
+        href: "login"
       },
     },
   ];

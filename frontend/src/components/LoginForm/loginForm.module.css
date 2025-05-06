@@ -3,7 +3,6 @@
     padding-top: 15vh;
     display: flex;
     flex-direction: column;
-    background-image: url("/public/images/createAccountPage/bgimage.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -17,6 +16,7 @@
     flex-direction: column;
     padding: 50px;
     background-color: #fff;
+    color: black!important;
     max-width: 400px;
     min-height: 500px;
     justify-content: space-evenly;    
@@ -132,3 +132,12 @@
     flex-direction: column;
 }
 
+@media screen and (max-width:1240px) {
+    .login {
+        max-width: 100%;
+    }
+
+    .alreadyAccount {
+        padding: 10px 20px;
+    }
+}
