@@ -13,6 +13,9 @@ type Props = {
 
 const Portrait = ({title, desc, imgPath, interviewText, name, companyLogoPath}: Props) => {
     return (
+        <>
+        
+        
         <div className={styles.portrait}>
             <H2Title text={title}/>
             <p>{desc}</p>
@@ -23,6 +26,7 @@ const Portrait = ({title, desc, imgPath, interviewText, name, companyLogoPath}: 
 
             </Link>
         </div>
+        </>
     )
 }
 

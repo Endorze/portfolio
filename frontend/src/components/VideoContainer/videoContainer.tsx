@@ -24,7 +24,7 @@ const VideoContainer = ({list, title, project}: Props) => {
         <div className={styles.videoContainer}>
             <Container>
                 <H2Title text={title}/>
-                <p>{project}</p>
+                <p className={styles.projectText}>{project}</p>
             </Container>
             <div className={styles.waterfallWrap}>
             <Masonry breakpointCols={breakpointColumnsObj}

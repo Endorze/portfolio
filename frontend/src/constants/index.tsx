@@ -2,23 +2,23 @@ export const features = [
     {
       id: '0',
       icon: '/images/feature-1.png',
-      caption: 'Easy integration',
+      caption: 'Easy to get started',
       title: 'Work smarter not harder',
-      text: "With Xora, tedious tasks are history. Automation and smart processes bring your productivity to new heights. It's like having an extra cup of coffee, but without the jitters.",
+      text: "Carlex Forums offers a supportive and knowledgeable community where developers can confidently seek assistance with coding challenges. Connect with thousands of active members, share your code, engage in discussions, and receive the help you need to move forward—starting today.",
       button: {
         icon: '/images/magictouch.svg',
-        title: 'Watch the demo',
+        title: 'Create Account',
       },
     },
     {
       id: '1',
       icon: '/images/feature-2.png',
-      caption: 'Secure & trustworthy',
-      title: 'Sleep easy, we got your back',
-      text: 'Your data security is our priority. With state-of-the-art encryption and robust privacy controls, Xora helps keeps your information secure and locked up tighter than Fort Knox.',
+      caption: 'Get the help you need',
+      title: 'Login now. We got your back',
+      text: '"Log in to Carlex Forums and join a reliable, developer-focused community ready to support you. Share your questions, post your code, collaborate with others, and get the help you need to solve your coding challenges—right when you need it.',
       button: {
         icon: '/images/docs.svg',
-        title: 'Read the docs',
+        title: 'login account',
       },
     },
   ];
@@ -55,27 +55,27 @@ export const features = [
   export const faq: FaqProps[] = [
     {
       id: '0',
-      question: 'How easy is it to setup Xora?',
+      question: 'How easy is it to use Carlex?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        'Using Carlex is as simple as it gets. Just create an account, log in, and you’re ready to go. From there, you can explore the community, post your code, ask questions, and connect with others — all in a few clicks.',
     },
     {
       id: '1',
-      question: 'Can I integrate Xora with other platforms?',
+      question: 'Can I integrate Carlex with other platforms?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        "Not just yet — but we're working on it. Integration with other platforms isn't available at the moment, but our team is actively developing solutions to make this possible in the near future. Stay tuned!",
     },
     {
       id: '2',
       question: 'How often do you add new content?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        'As a solo developer behind Carlex, I add new content whenever time allows. While my studies take priority, I’m committed to keeping the platform growing and do my best to update it regularly when possible.',
     },
     {
       id: '3',
       question: 'What your refund policy?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        'We offer refunds in all reasonable cases where the issue is clearly on our side. If something doesn’t work as intended due to an error on our end, we’ll make it right.',
     },
     {
       id: '4',
@@ -85,9 +85,9 @@ export const features = [
     },
     {
       id: '5',
-      question: 'What happens when I’m out of storage?',
+      question: 'How do you store my personal information?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        'Your personal information is stored securely in a PostgreSQL database. Passwords are salted and hashed using modern encryption standards to ensure your data stays protected.',
     },
     {
       id: '6',
@@ -99,28 +99,28 @@ export const features = [
       id: '7',
       question: 'How do I invite my team?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        'Inviting your team is easy. Just create a group from your dashboard, enter your teammates’ email addresses, and they’ll receive a secure invite link. Once they accept, they’ll be added to your group and ready to collaborate.',
     },
     {
       id: '8',
       question: 'Do you offer training for individuals and teams?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        'Absolutely. We offer custom training for both individuals and teams. Just send your request to carlex-fakecorps@gmail.com, and we’ll get back to you with more details.',
     },
     {
       id: '9',
       question: 'I’m locked out of my account what do I do?',
       answer:
-        'Absolutely! Not only you can upgrade your plan at any time but you also get a prorated discount giving you maximum value for your subscription.',
+        "If you're locked out of your account, just reach out to our customer support and we'll do our best to help you regain access as soon as possible.",
     },
   ];
   
   export const plans = [
     {
       id: '0',
-      title: 'Core',
-      priceMonthly: 19,
-      priceYearly: 12,
+      title: 'Free Trial 30-days',
+      priceMonthly: 0,
+      priceYearly: 0,
       caption: 'Best for solo creators',
       features: [
         '100MB Cloud storage',
@@ -174,15 +174,15 @@ export const features = [
   export const testimonials: TestimonialProps[] = [
     {
       id: '0',
-      name: 'Jessica Saunders',
+      name: 'Frida Hedlund',
       role: 'Globalnomads',
       avatarUrl: '/images/testimonials/jessica-saunders.png',
       comment:
-        "Xora's customer support is second to none! They’re like my tech superheroes, always there when I need them.",
+        "Carlex's customer support is second to none! They’re like my tech superheroes, always there when I need them.",
     },
     {
       id: '1',
-      name: 'Mark Erixon',
+      name: 'Markus Eriksson',
       role: 'Vid capital intl',
       avatarUrl: '/images/testimonials/mark-erixon.png',
       comment:
@@ -190,7 +190,7 @@ export const features = [
     },
     {
       id: '2',
-      name: 'Melanie Hurst',
+      name: 'Miranda Holst',
       role: 'Cyberleap',
       avatarUrl: '/images/testimonials/melanie-hurst.png',
       comment:
@@ -198,7 +198,7 @@ export const features = [
     },
     {
       id: '3',
-      name: 'Alicia Barker',
+      name: 'Alicia Berg',
       role: 'Cyberleap',
       avatarUrl: '/images/testimonials/alicia-barker.png',
       comment:
@@ -210,11 +210,11 @@ export const features = [
       role: 'Floclips',
       avatarUrl: '/images/testimonials/becky-snider.png',
       comment:
-        "Switched to Xora last month, and I'm already seeing results. Best decision for our team!",
+        "Switched to Carlex last month, and I'm already seeing results. Best decision for our team!",
     },
     {
       id: '5',
-      name: 'Jim Bradley',
+      name: 'Alex Veldmand',
       role: 'Vid capital intl',
       avatarUrl: '/images/testimonials/jim-bradley.png',
       comment:

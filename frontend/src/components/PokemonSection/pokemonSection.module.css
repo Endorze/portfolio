@@ -1,11 +1,11 @@
 .pokemonSection {
     padding-top: var(--section-distance);
     padding-bottom: var(--section-distance);
-    background-color: rgb(223, 223, 223);
 }
 
 .textContainer {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.692);
+    color: black;
     padding: 1rem;
     border-radius: 10px;
 }
