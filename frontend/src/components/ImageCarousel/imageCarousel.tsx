@@ -24,11 +24,11 @@ const ImageCarousel = ({ title, text }: Props) => {
             <Carousel className={styles.carousel}>
                  <div>
                     <img src="/images/carousel/uiux.png" alt="Slide 1" />
-                    <a href="/" className="legend">Go to my Bethesda Page</a>
+                    <a href="https://ui-ux-page-fh9m.vercel.app/" className="legend">Go to my UI/UX Page</a>
                 </div>
                 <div>
                     <img src="/images/carousel/bethesda.png" alt="Slide 1" />
-                    <a href="/" className="legend">Go to my Bethesda Page</a>
+                    <a href="https://react-mock-webpage.vercel.app/" className="legend">Go to my Bethesda Page</a>
                 </div>
                 <div>
                     <img src="/images/carousel/zooreact.png" alt="Slide 2" />
