@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useState } from "react";
 import Container from "../../components/Container/container";
 import styles from "./createAccount.module.css"
+import { BACKEND_URL } from "../../utils/api";
 
 const CreateAccount: FC = () => {
 
@@ -25,7 +26,7 @@ const CreateAccount: FC = () => {
             return 
         }
 
-        const response = await fetch("http://localhost:8080/api/create-account", {
+        const response = await fetch(`${BACKEND_URL}/api/create-account`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({...accountData}),

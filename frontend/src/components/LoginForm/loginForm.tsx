@@ -4,6 +4,7 @@ import styles from "./loginForm.module.css"
 import { useDispatch } from "react-redux";
 import { login } from "../../store/authSlice.js";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../../utils/api";
 
 
 const LoginForm = () => {
@@ -28,7 +29,7 @@ const LoginForm = () => {
                 return 
             }
     
-            const response = await fetch("http://endorze.org:444/api/login", {
+            const response = await fetch(`${BACKEND_URL}/api/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({...accountData}),
