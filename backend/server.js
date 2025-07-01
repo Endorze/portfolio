@@ -1,13 +1,16 @@
+import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import client from "./db.js";
 import contactForm from "./routes/contactForm.js"
 import account from "./routes/account.js"
+import chat from "./routes/chat.js"
 import path from "path";
 import { fileURLToPath } from "url";
 import flyway from "./flyway.js"
 
 flyway.migrate()
+dotenv.config();
 
 const app = express();
 
@@ -33,6 +36,7 @@ app.post("/add-number", async (req, res) => {
 
 app.use("/api", contactForm);
 app.use("/api", account)
+app.use("/api", chat)
 
 app.get('/get-numbers', async (req, res) => {
     try {

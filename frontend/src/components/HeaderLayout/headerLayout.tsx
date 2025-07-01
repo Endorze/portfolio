@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../Header/header";
 import { Outlet } from "react-router-dom";
+import ChatWidget from "../Chat/Chat";
 
 
 function HeaderLayout() {
@@ -21,6 +22,7 @@ function HeaderLayout() {
         <div>
             {isLargeScreen && <Header />}
             <Outlet />
+            <ChatWidget />
         </div>
     )
 }
