@@ -37,11 +37,6 @@ const Header = () => {
                     <div className="w-full max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden sidebar-before max-md:px-4">
                         <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
                             <ul className="flex max-lg:block max-lg:px-12">
-                                <li className="nav-li">
-                                    <NavLink title={"features"} />
-                                    <div className="dot" />
-                                    <NavLink title={"pricing"} />
-                                </li>
                                 <li className="nav-logo">
                                     <LinkScroll to="hero"
                                     offset={-250} spy smooth className={clsx("max-lg:hidden transition-transform duration-500 cursor-pointer")}>
