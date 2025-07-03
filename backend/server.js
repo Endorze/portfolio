@@ -36,19 +36,6 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json());
 
-
-//Testade med postman, siffra läggs till korrekt i databasen.
-app.post("/add-number", async (req, res) => {
-    try {
-        const { number } = req.body;
-        await client.query(`INSERT INTO test (id) values ($1)`, [number])
-        res.json({ message: 'Nummer har lagts till!' });
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Serverfel");
-    }
-})
-
 app.use("/api", contactForm);
 app.use("/api", account)
 app.use("/api", chat)
