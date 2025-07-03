@@ -34,6 +34,7 @@ services:
       RECAPTCHA_SECRET: $RECAPTCHA_SECRET
       JWT_SECRET: $JWT_SECRET
       JWT_EXPIRES_IN: $JWT_EXPIRES_IN
+      OPENAI_API_KEY: $OPENAI_API_KEY
     ports:
       - 51235:8080
     networks:
