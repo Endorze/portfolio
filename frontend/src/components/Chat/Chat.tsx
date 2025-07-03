@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { BACKEND_URL } from "../../utils/api";
 
 interface Message {
   sender: "user" | "ai";
@@ -23,7 +24,7 @@ const ChatWidget: React.FC = () => {
     setInput("");
 
     try {
-      const res = await fetch("http://localhost:8080/api/chat", {
+      const res = await fetch(`${BACKEND_URL}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
