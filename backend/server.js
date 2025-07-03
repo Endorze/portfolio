@@ -8,11 +8,26 @@ import chat from "./routes/chat.js"
 import path from "path";
 import { fileURLToPath } from "url";
 import flyway from "./flyway.js"
+import { rateLimit } from 'express-rate-limit'
 
 flyway.migrate()
 dotenv.config();
 
 const app = express();
+
+
+const limiter = rateLimit({
+	windowMs: 60 * 60 * 1000, // 60 minutes
+	limit: 10, // Limit each IP to 10 requests per `window` (here, per 60 minutes).
+	standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+    message: {
+        error: "To many messages sent from this IP-Adress"
+    }
+})
+
+// Apply the rate limiting middleware to chat requests.
+app.use("/api/chat", limiter)
 
 const corsOptions = {
     origin: ["http://localhost:5173"]
