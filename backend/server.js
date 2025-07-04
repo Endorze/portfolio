@@ -30,7 +30,7 @@ const limiter = rateLimit({
 app.use("/api/chat", limiter)
 
 const corsOptions = {
-    origin: ["http://localhost:5173"]
+    origin: ['http://localhost:5173', 'http://endorze.org']
 }
 
 app.use(cors(corsOptions))

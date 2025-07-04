@@ -1,4 +1,4 @@
-const PROD_BACKEND = "http://endorze.org:79"
+const PROD_BACKEND = "http://endorze.org:8080"
 const DEV_BACKEND = "http://localhost:8080"
 
 // ÄNDRA TILL true INNAN DU SKRIVER docker compose up --build -d

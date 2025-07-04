@@ -1,5 +1,6 @@
 import express from "express";
 import OpenAI from "openai";
+import alexProfile from "./alexProfile.js";
 
 const router = express.Router();
 
@@ -41,9 +42,10 @@ router.post("/chat", async (req, res) => {
     try {
         const result = await openai.chat.completions.create({
             model: "gpt-4o-mini",
-            max_tokens: 100,
+            max_tokens: 300,
             messages: [
-                { "role": "user", "content": message },
+                { role: "system", content: alexProfile },
+                { role: "user", "content": message },
             ],
         });
 

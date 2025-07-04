@@ -110,7 +110,7 @@ const ChatWidget: React.FC = () => {
 
 const styles: { [key: string]: React.CSSProperties } = {
   openButton: {
-    backgroundColor: "#0084ff",
+    backgroundColor: "#041c3b",
     color: "#fff",
     border: "none",
     borderRadius: "50%",
@@ -159,11 +159,13 @@ const styles: { [key: string]: React.CSSProperties } = {
     borderRadius: "16px",
     fontSize: "14px",
     lineHeight: "1.4",
+    color: "#000000"
   },
   inputArea: {
     display: "flex",
     padding: "8px",
     borderTop: "1px solid #ccc",
+    color: "#000000"
   },
   input: {
     flex: 1,

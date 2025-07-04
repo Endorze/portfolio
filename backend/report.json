@@ -413,6 +413,36 @@
       "operation": "migrate",
       "exception": null,
       "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.22.3",
+      "database": "portfolio",
+      "warnings": [],
+      "timestamp": "2025-07-04T13:16:16.563597500",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.22.3",
+      "database": "portfolio",
+      "warnings": [],
+      "timestamp": "2025-07-04T13:29:30.704285800",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
     }
   ]
 }
