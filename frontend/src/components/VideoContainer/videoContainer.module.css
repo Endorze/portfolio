@@ -18,5 +18,10 @@
 .projectText {
   font-size: 5rem;
   color: #C8EA80;
+}
 
+@media screen and (max-width: 640px) {
+  .projectText {
+    font-size: 3rem;
+  }
 }

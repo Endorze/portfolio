@@ -34,9 +34,9 @@ router.post("/chat", async (req, res) => {
         return res.status(400).json({ error: "Ogiltigt meddelande" });
     }
 
-    if (message.length > 50) {
+    if (message.length > 200) {
         console.log("Skrev för långt meddelande")
-        return res.status(400).json({ error: "Meddelandet får max vara 50 tecken långt." });
+        return res.status(400).json({ error: "Meddelandet får max vara 200 tecken långt." });
     }
 
     try {

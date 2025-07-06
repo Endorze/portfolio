@@ -18,8 +18,8 @@ const ChatWidget: React.FC = () => {
     const userMessage: Message = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
 
-    if (messages.length > 50) {
-      alert("Du får max skriva 50 karaktärer")
+    if (messages.length > 200) {
+      alert("Du får max skriva 200 karaktärer")
     }
     setInput("");
 

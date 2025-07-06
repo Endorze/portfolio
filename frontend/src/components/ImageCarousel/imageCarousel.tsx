@@ -16,10 +16,6 @@ const ImageCarousel = ({ title, text }: Props) => {
                     <H2Title text={title} />
                     <p>{text}</p>
                 </div>
-                <div className={styles.textSection}>
-                    <H2Title text={"Random Fact About Me"} />
-                    <p>Before i decided on a career as a programmer, <em>i actually spent my years working as a salesman...</em> Worst time spent ever, glad to have found my true calling.</p>
-                </div>
             </div>
             <Carousel className={styles.carousel}>
                  <div>
@@ -55,20 +51,6 @@ const ImageCarousel = ({ title, text }: Props) => {
                     <a href="http://endorze.org:81/" className="legend">Ps... Page does not load content without downloading the screenreader for Albion</a>
                 </div>
             </Carousel>
-            <div className={styles.horizontal}>
-                <div className={styles.textSection}>
-                    <H2Title text={"My Workprocess"} />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, voluptatem repellat nam dicta voluptates unde tempora impedit libero inventore facilis, exercitationem eos ex asperiores qui ab quod laborum fuga minima?</p>
-                </div>
-                <div className={styles.textSection}>
-                    <H2Title text={"Merits"} />
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis aliquid, rerum nobis fuga necessitatibus commodi eaque. Ex atque beatae perferendis saepe in quia odit consequuntur delectus doloribus neque, esse dicta.</p>
-                </div>
-                <div className={styles.textSection}>
-                    <H2Title text={"Why Carlex"} />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatibus illo ea, maiores, voluptates quas nulla exercitationem perferendis obcaecati mollitia odio! Nostrum officiis alias nesciunt ratione porro doloremque aliquam ea.</p>
-                </div>
-            </div>
         </div>
     );
 }
