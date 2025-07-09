@@ -22,7 +22,7 @@ const VideoContainer = ({ list, title, project }: Props) => {
     return (
         <div className={styles.videoContainer}>
             <H2Title text={title} />
-            <p className={styles.projectText}>{project}</p>
+            <h2 className={styles.projectText}>{project}</h2>
             <div className={styles.waterfallWrap}>
                 <Masonry breakpointCols={breakpointColumnsObj}
                     className={styles.myMasonryGrid}

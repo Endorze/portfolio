@@ -4,7 +4,7 @@ import styles from "./footer.module.css"
 const Footer = () => {
     return (
         <div className={styles.footer}>
-            <Container>
+            <div className="container">
                 <h2 className={styles.contactTitle}>Contact</h2>
                 <div className={styles.horizontal}>
                     <div className={styles.generalInfo}>
@@ -33,7 +33,7 @@ const Footer = () => {
                 <div className={styles.copyright}>
                     <p>&copy; 2025 <a href="/">CARLEX DD STUDIO</a>. All rights reserved.<br/> This website, design and all rights belongs to Alexander Hallgren</p>
                 </div>
-            </Container>
+            </div>
         </div>
     )
 }

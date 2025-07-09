@@ -1,8 +1,3 @@
-.pokemonSection {
-    padding-top: var(--section-distance);
-    padding-bottom: var(--section-distance);
-}
-
 .textContainer {
     padding: 1rem;
     border-radius: 10px;

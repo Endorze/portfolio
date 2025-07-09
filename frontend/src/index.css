@@ -33,38 +33,11 @@
 
   .h1 {
     @apply text-[84px] font-black leading-[84px] tracking-[-0.03em];
+    color: #000000
   }
 
   .h2 {
-    @apply text-[64px] font-black leading-[64px];
-  }
-
-  .h3 {
-    @apply text-[48px] font-semibold leading-[56px] tracking-[-0.02em];
-  }
-
-  .h4 {
-    @apply text-[40px] font-semibold leading-[52px];
-  }
-
-  .h5 {
-    @apply text-[32px] font-semibold leading-[40px];
-  }
-
-  .h6 {
-    @apply text-[24px] font-medium leading-[36px];
-  }
-
-  .body-1 {
-    @apply text-[22px] leading-[36px];
-  }
-
-  .body-2 {
-    @apply text-[18px] font-semibold leading-[32px];
-  }
-
-  .body-3 {
-    @apply text-[16px] leading-[28px] tracking-[0.02em];
+    color: var(--title)
   }
 
   .base {
@@ -116,14 +89,15 @@
   --button-hover: #75a9ec;
   --form-link-color: #93bef7;
   --form-link-hover: #75a9ec;
-  --green-title: #C8EA80;
-  --title: #89ffc4;
+  --green-title: #0d4896;
+  --title: #0d4896;
 }
 
 html, body {
   min-height: 100vh;
   overflow-x: hidden;
-  color: #e2e2e2;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 p {

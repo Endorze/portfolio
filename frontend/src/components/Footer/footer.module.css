@@ -47,3 +47,11 @@
 .copyright {
     padding-bottom: 20px;
 }
+
+@media screen and (max-width: 640px) {
+    .horizontal {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+}
