@@ -8,7 +8,7 @@ import Hero from "../../components/Hero/hero";
 const Home: FC = () => {
 
     return (
-        <div className="container">
+        <div>
             <Hero />
                 <ImageCarousel title={"View My Projects"} text={"I craft my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed. To combine my hobbies of programming and gaming."} />
             <PokemonSection />
