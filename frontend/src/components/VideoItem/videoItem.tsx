@@ -39,7 +39,7 @@ const VideoItem = ({ src, width = 560, height = 315 }: Props) => {
             )}
 
             {isMp4 && (
-                <video controls style={{ width: '100%', maxHeight: '500px', borderRadius: '8px', objectFit: 'contain' }}>
+                <video controls muted autoPlay style={{ width: '100%', maxHeight: '500px', borderRadius: '8px', objectFit: 'contain' }}>
                     <source src={src} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
