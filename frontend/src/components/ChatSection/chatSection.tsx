@@ -5,8 +5,7 @@ interface Message {
     text: string;
 }
 
-const ChatWidget: React.FC = () => {
-    const [open, setOpen] = useState<boolean>(false);
+const ChatSection: React.FC = () => {
     const [input, setInput] = useState<string>("");
     const [messages, setMessages] = useState<Message[]>([]);
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -59,45 +58,41 @@ const ChatWidget: React.FC = () => {
         if (e.key === "Enter") sendMessage();
     };
 
-    useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [messages]);
-
     return (
-        <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999 }}>
-            {open ? (
-                <div>
+        <div className="py-16">
+                <div className="container">
                     <div>
-                        <span>🤖 Endorze-AI</span>
-                        <button onClick={() => setOpen(false)}>×</button>
+                        <div className="text-center">
+                            <p className="pb-12">Ask me Questions about Alexander</p>
+                        </div>
+                        <div className="border rounded-2xl p-12">
+                        <div className="h-[200px] overflow-y-auto">
+                            {messages.map((msg, idx) => (
+                                <div
+                                    key={idx}
+                                >
+                                    {msg.text}
+                                </div>
+                            ))}
+                            <div ref={messagesEndRef} />
+                        </div>
+                        <div className="flex justify-between">
+                            <input
+                                type="text"
+                                placeholder="Ask me anything"
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)}
+                                onKeyDown={handleKeyDown}
+                                className="max-w-[400px] overflow-y-auto"
+                            />
+                            <button onClick={sendMessage}>Skicka</button>
+                        </div>
+                        </div>
                     </div>
-                    <div>
-                        {messages.map((msg, idx) => (
-                            <div
-                                key={idx}
+                    </div>
 
-                            >
-                                {msg.text}
-                            </div>
-                        ))}
-                        <div ref={messagesEndRef} />
-                    </div>
-                    <div>
-                        <input
-                            type="text"
-                            placeholder="Skriv ett meddelande..."
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyDown={handleKeyDown}
-                        />
-                        <button onClick={sendMessage}>Skicka</button>
-                    </div>
-                </div>
-            ) : (
-                <button onClick={() => setOpen(true)}>
-                    💬
-                </button>
-            )}
         </div>
     );
 };
+
+export default ChatSection;
