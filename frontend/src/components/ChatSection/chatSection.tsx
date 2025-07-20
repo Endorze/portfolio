@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
+import { ThreeDots } from "react-loading-icons";
 
 interface Message {
     sender: "user" | "ai";
@@ -9,17 +10,15 @@ const ChatSection: React.FC = () => {
     const [input, setInput] = useState<string>("");
     const [messages, setMessages] = useState<Message[]>([]);
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
+    const [isTyping, setIsTyping] = useState<boolean>(false);
 
     const sendMessage = async () => {
         if (!input.trim()) return;
 
         const userMessage: Message = { sender: "user", text: input };
         setMessages((prev) => [...prev, userMessage]);
-
-        if (messages.length > 50) {
-            alert("Du får max skriva 50 karaktärer")
-        }
         setInput("");
+        setIsTyping(true);
 
         try {
             const res = await fetch("http://localhost:8080/api/chat", {
@@ -50,6 +49,8 @@ const ChatSection: React.FC = () => {
                 ...prev,
                 { sender: "ai", text: err.message || "Kunde inte hämta svar från AI." },
             ]);
+        } finally {
+            setIsTyping(false);
         }
 
     };
@@ -59,38 +60,60 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div className="py-16">
+        <div className="bg-white-100">
+            <div className="py-16">
                 <div className="container">
                     <div>
                         <div className="text-center">
                             <p className="pb-12">Ask me Questions about Alexander</p>
                         </div>
                         <div className="border rounded-2xl p-12">
-                        <div className="h-[200px] overflow-y-auto">
-                            {messages.map((msg, idx) => (
-                                <div
-                                    key={idx}
-                                >
-                                    {msg.text}
-                                </div>
-                            ))}
-                            <div ref={messagesEndRef} />
-                        </div>
-                        <div className="flex justify-between">
-                            <input
-                                type="text"
-                                placeholder="Ask me anything"
-                                value={input}
-                                onChange={(e) => setInput(e.target.value)}
-                                onKeyDown={handleKeyDown}
-                                className="max-w-[400px] overflow-y-auto"
-                            />
-                            <button onClick={sendMessage}>Skicka</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
+                            <div className="h-[300px] overflow-y-auto scrollbar-hide">
+                                {messages.map((msg, idx) => (
 
+                                    <div
+                                        className={`pb-4 ${msg.sender === "user" ? "text-right" : "text-left"}`}
+                                    >
+                                        <div className="text-sm font-bold text-indigo-600">
+                                            {msg.sender === "user" ? "You" : "Alexander's Assistant"}
+                                        </div>
+                                        <div className={`inline-block px-4 py-2 rounded-xl mt-1 ${msg.sender === "user" ? "bg-indigo-100" : "bg-zinc-100"
+                                            }`}>
+                                            {msg.text}
+                                        </div>
+                                    </div>
+
+                                ))}
+                                {isTyping && (
+                                    <div className="text-left pb-4">
+                                        <div className="text-sm font-bold">Alexander's Assistant</div>
+                                        <div className="bg-gray-200 inline-block px-4 py-2 rounded-xl mt-1 italic text-gray-600">
+                                            <ThreeDots fill="#4B5563" height={16} />
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div ref={messagesEndRef} />
+                            </div>
+
+                            <div className="flex pt-4 pb-4">
+                                <input
+                                    type="text"
+                                    placeholder="Ask me anything"
+                                    value={input}
+                                    onChange={(e) => setInput(e.target.value)}
+                                    onKeyDown={handleKeyDown}
+                                    className="overflow-x-auto w-full scrollbar-hide"
+                                />
+                            </div>
+                            <div>
+                                <button className="bg-indigo-600 text-white rounded-xl p-2" onClick={sendMessage}>Skicka</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     );
 };
