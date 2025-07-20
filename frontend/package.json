@@ -27,6 +27,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^7.3.0",
     "react-scroll": "^1.9.3",
+    "react-speech-recognition": "^4.0.1",
     "tailwind-scrollbar-hide": "^4.0.0",
     "typeit-react": "^2.7.8",
     "typescript": "^5.8.3"
@@ -37,6 +38,7 @@
     "@types/react-dom": "^19.0.4",
     "@types/react-google-recaptcha": "^2.1.9",
     "@types/react-scroll": "^1.8.10",
+    "@types/react-speech-recognition": "^3.9.6",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.21.0",
