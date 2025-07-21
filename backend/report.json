@@ -458,6 +458,66 @@
       "operation": "migrate",
       "exception": null,
       "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.22.3",
+      "database": "portfolio",
+      "warnings": [],
+      "timestamp": "2025-07-18T13:12:07.928922600",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.22.3",
+      "database": "portfolio",
+      "warnings": [],
+      "timestamp": "2025-07-20T12:53:36.543923700",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.22.3",
+      "database": "portfolio",
+      "warnings": [],
+      "timestamp": "2025-07-20T13:30:52.130567900",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "1",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.22.3",
+      "database": "portfolio",
+      "warnings": [],
+      "timestamp": "2025-07-21T12:00:39.458060200",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
     }
   ]
 }

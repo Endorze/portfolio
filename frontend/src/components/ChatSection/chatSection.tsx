@@ -1,26 +1,26 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
+import { ThreeDots } from "react-loading-icons";
+import VoiceRecognition from "../VoiceRecognition/voiceRecognition";
 
 interface Message {
     sender: "user" | "ai";
     text: string;
 }
 
-const ChatWidget: React.FC = () => {
-    const [open, setOpen] = useState<boolean>(false);
+const ChatSection: React.FC = () => {
     const [input, setInput] = useState<string>("");
     const [messages, setMessages] = useState<Message[]>([]);
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
+    const [isTyping, setIsTyping] = useState<boolean>(false);
 
-    const sendMessage = async () => {
+    const sendMessage = async (messageText?: string) => {
+        const messageToSend = messageText || input;
         if (!input.trim()) return;
 
         const userMessage: Message = { sender: "user", text: input };
         setMessages((prev) => [...prev, userMessage]);
-
-        if (messages.length > 50) {
-            alert("Du får max skriva 50 karaktärer")
-        }
         setInput("");
+        setIsTyping(true);
 
         try {
             const res = await fetch("http://localhost:8080/api/chat", {
@@ -51,6 +51,8 @@ const ChatWidget: React.FC = () => {
                 ...prev,
                 { sender: "ai", text: err.message || "Kunde inte hämta svar från AI." },
             ]);
+        } finally {
+            setIsTyping(false);
         }
 
     };
@@ -59,45 +61,67 @@ const ChatWidget: React.FC = () => {
         if (e.key === "Enter") sendMessage();
     };
 
-    useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [messages]);
-
     return (
-        <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999 }}>
-            {open ? (
-                <div>
+        <div className="bg-white-100">
+            <div className="py-16 max-md:py-12">
+                <div className="container">
                     <div>
-                        <span>🤖 Endorze-AI</span>
-                        <button onClick={() => setOpen(false)}>×</button>
-                    </div>
-                    <div>
-                        {messages.map((msg, idx) => (
-                            <div
-                                key={idx}
+                        <div className="text-center">
+                            <p className="pb-12 max-md:pb-4">Ask me Questions about Alexander (This is a prototype, it might have errors)</p>
+                        </div>
+                        <div className="border rounded-2xl p-12 max-md:p-4">
+                            <div className="h-[225px] overflow-y-auto scrollbar-hide">
+                                {messages.map((msg, idx) => (
 
-                            >
-                                {msg.text}
+                                    <div
+                                        className={`pb-4 ${msg.sender === "user" ? "text-right" : "text-left"}`}
+                                    >
+                                        <div className="text-sm font-bold text-indigo-600">
+                                            {msg.sender === "user" ? "You" : "Alexander's Assistant"}
+                                        </div>
+                                        <div className={`inline-block px-4 py-2 rounded-xl mt-1 ${msg.sender === "user" ? "bg-indigo-100" : "bg-zinc-100"
+                                            }`}>
+                                            {msg.text}
+                                        </div>
+                                    </div>
+
+                                ))}
+                                {isTyping && (
+                                    <div className="text-left pb-4">
+                                        <div className="text-sm font-bold">Alexander's Assistant</div>
+                                        <div className="bg-gray-200 inline-block px-4 py-2 rounded-xl mt-1 italic text-gray-600">
+                                            <ThreeDots fill="#4B5563" height={16} />
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div ref={messagesEndRef} />
                             </div>
-                        ))}
-                        <div ref={messagesEndRef} />
-                    </div>
-                    <div>
-                        <input
-                            type="text"
-                            placeholder="Skriv ett meddelande..."
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            onKeyDown={handleKeyDown}
-                        />
-                        <button onClick={sendMessage}>Skicka</button>
+
+                            <div className="flex py-4">
+                                <input
+                                    type="text"
+                                    placeholder="Ask me anything"
+                                    value={input}
+                                    onChange={(e) => setInput(e.target.value)}
+                                    onKeyDown={handleKeyDown}
+                                    className="overflow-x-auto w-full scrollbar-hide"
+                                />
+                            </div>
+                            <div>
+                                <button className="bg-indigo-600 text-white rounded-xl p-2" onClick={sendMessage}>Skicka</button>
+                                <VoiceRecognition onVoiceSubmit={(voiceText) => {
+                                    setInput(voiceText);
+                                    sendMessage();
+                                }}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            ) : (
-                <button onClick={() => setOpen(true)}>
-                    💬
-                </button>
-            )}
+
+            </div>
         </div>
     );
 };
+
+export default ChatSection;
