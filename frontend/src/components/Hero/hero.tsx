@@ -5,7 +5,7 @@ const Hero = () => {
           <div className="w-full bg-gray-300">
             <div className="container">
                 <div className="flex justify-center">
-                    <section className="relative pt-40 max-md:pt-4 pb-20 max-md:max-w-[1220px]">
+                    <section className="relative pt-40 max-md:pt-4 max-md pb-8 max-md:max-w-[1220px] md:pb-20 ">
                         <div className="flex flex-col-reverse sm:flex-row justify-between">
 
                             <div className="relative z-2 max-w-512 max-lg:max-w-388 flex flex-col justify-center max-md:pt-6">

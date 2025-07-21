@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { ThreeDots } from "react-loading-icons";
+import VoiceRecognition from "../VoiceRecognition/voiceRecognition";
 
 interface Message {
     sender: "user" | "ai";
@@ -12,7 +13,8 @@ const ChatSection: React.FC = () => {
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const [isTyping, setIsTyping] = useState<boolean>(false);
 
-    const sendMessage = async () => {
+    const sendMessage = async (messageText?: string) => {
+        const messageToSend = messageText || input;
         if (!input.trim()) return;
 
         const userMessage: Message = { sender: "user", text: input };
@@ -61,14 +63,14 @@ const ChatSection: React.FC = () => {
 
     return (
         <div className="bg-white-100">
-            <div className="py-16">
+            <div className="py-16 max-md:py-12">
                 <div className="container">
                     <div>
                         <div className="text-center">
-                            <p className="pb-12">Ask me Questions about Alexander</p>
+                            <p className="pb-12 max-md:pb-4">Ask me Questions about Alexander (This is a prototype, it might have errors)</p>
                         </div>
-                        <div className="border rounded-2xl p-12">
-                            <div className="h-[300px] overflow-y-auto scrollbar-hide">
+                        <div className="border rounded-2xl p-12 max-md:p-4">
+                            <div className="h-[225px] overflow-y-auto scrollbar-hide">
                                 {messages.map((msg, idx) => (
 
                                     <div
@@ -96,7 +98,7 @@ const ChatSection: React.FC = () => {
                                 <div ref={messagesEndRef} />
                             </div>
 
-                            <div className="flex pt-4 pb-4">
+                            <div className="flex py-4">
                                 <input
                                     type="text"
                                     placeholder="Ask me anything"
@@ -108,6 +110,10 @@ const ChatSection: React.FC = () => {
                             </div>
                             <div>
                                 <button className="bg-indigo-600 text-white rounded-xl p-2" onClick={sendMessage}>Skicka</button>
+                                <VoiceRecognition onVoiceSubmit={(voiceText) => {
+                                    setInput(voiceText);
+                                    sendMessage();
+                                }}/>
                             </div>
                         </div>
                     </div>

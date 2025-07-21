@@ -1,39 +1,50 @@
-    import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-    import { useState } from "react";
-    
-    //Funktion för att acceptera en voice input, så att användaren kan tala istället för att skriva
-    const VoiceRecognition = ({ onVoiceSubmit }: { onVoiceSubmit: (text: string) => void }) => {
-        const [isListening, setIsListening] = useState<boolean>(false);
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import { useEffect, useState } from "react";
+import { FaMicrophone, FaMicrophoneSlash } from 'react-icons/fa';
 
-        const {
-            transcript,
-            resetTranscript,
-            listening,
-            browserSupportsSpeechRecognition
-        } = useSpeechRecognition();
+//Funktion för att acceptera en voice input, så att användaren kan tala istället för att skriva
+const VoiceRecognition = ({ onVoiceSubmit }: { onVoiceSubmit: (text: string) => void }) => {
+    const [isListening, setIsListening] = useState<boolean>(false);
 
-        const handleMicClick = () => {
-            if (listening) {
-                SpeechRecognition.stopListening();
-                setIsListening(false);
-                if (transcript.trim()) {
-                    onVoiceSubmit(transcript);
-                    resetTranscript;
-                }
-            } else {
-                setIsListening(true);
-                SpeechRecognition.startListening({ continuous: false, language: "sv-SE" });
+    const {
+        transcript,
+        resetTranscript,
+        listening,
+        browserSupportsSpeechRecognition
+    } = useSpeechRecognition();
+
+    useEffect(() => {
+        if (!listening && transcript.trim()) {
+            onVoiceSubmit(transcript.trim());
+            resetTranscript();
+        }
+    }, [listening])
+
+    const handleMicClick = () => {
+        if (listening) {
+            SpeechRecognition.stopListening();
+            setIsListening(false);
+            if (transcript.trim()) {
+                onVoiceSubmit(transcript);
+                resetTranscript();
             }
+        } else {
+            setIsListening(true);
+            resetTranscript();
+            SpeechRecognition.startListening({ continuous: false, language: "sv-SE" });
         }
-        if (!browserSupportsSpeechRecognition) {
-            return <span>Your webbrowser does not support voice-recognition</span>
-        }
-        return (
-            <button onClick={handleMicClick} className="ml-2 p-2 rounded-full bg-indigo-600 text-white">
-                🎤 {isListening ? "Lyssnar..." : "Starta"}
-            </button>
-        )
+
 
     }
+    if (!browserSupportsSpeechRecognition) {
+        return <span>Your webbrowser does not support voice-recognition</span>
+    }
+    return (
+        <button onClick={handleMicClick} className="ml-2 p-3 rounded-full bg-indigo-600 text-white">
+            {isListening ? <FaMicrophoneSlash /> : <FaMicrophone />}
+        </button>
+    )
 
-    export default VoiceRecognition
+}
+
+export default VoiceRecognition
