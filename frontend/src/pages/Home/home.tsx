@@ -1,6 +1,4 @@
 import { FC } from "react";
-import Container from "../../components/Container/container";
-import Footer from "../../components/Footer/footer";
 import ImageCarousel from "../../components/ImageCarousel/imageCarousel";
 import PokemonSection from "../../components/PokemonSection/pokemonSection";
 import Hero from "../../components/Hero/hero";

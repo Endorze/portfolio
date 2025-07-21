@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { ThreeDots } from "react-loading-icons";
 import VoiceRecognition from "../VoiceRecognition/voiceRecognition";
+import { BACKEND_URL } from "../../utils/api";
 
 interface Message {
     sender: "user" | "ai";
@@ -13,8 +14,7 @@ const ChatSection: React.FC = () => {
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const [isTyping, setIsTyping] = useState<boolean>(false);
 
-    const sendMessage = async (messageText?: string) => {
-        const messageToSend = messageText || input;
+    const sendMessage = async () => {
         if (!input.trim()) return;
 
         const userMessage: Message = { sender: "user", text: input };
@@ -23,7 +23,7 @@ const ChatSection: React.FC = () => {
         setIsTyping(true);
 
         try {
-            const res = await fetch("http://localhost:8080/api/chat", {
+            const res = await fetch(`${BACKEND_URL}/api/chat`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: input }),
