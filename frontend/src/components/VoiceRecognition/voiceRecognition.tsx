@@ -31,7 +31,7 @@ const VoiceRecognition = ({ onVoiceSubmit }: { onVoiceSubmit: (text: string) => 
         } else {
             setIsListening(true);
             resetTranscript();
-            SpeechRecognition.startListening({ continuous: false, language: "sv-SE" });
+            SpeechRecognition.startListening({ continuous: false, language: "en-US" });
         }
 
 
