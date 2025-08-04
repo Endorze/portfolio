@@ -11,7 +11,7 @@
 .marqueeContent {
   display: flex;
   width: max-content;
-  animation: scrollLeft 30s linear infinite;
+  animation: scrollLeft 25s linear infinite;
   padding: 0.5rem;
 }
 
