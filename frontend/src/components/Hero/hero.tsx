@@ -1,26 +1,21 @@
 import AnimatedText from "../AnimatedText/animatedText";
+import styles from "./hero.module.css"
 
 const Hero = () => {
     return (
-          <div className="w-full bg-gray-300">
+        <div className="w-full bg-[url(/images/glacier.jpg)] bg-no-repeat bg-cover min-h-screen flex items-start md:items-center pt-36 md:pt-0">
             <div className="container">
-                <div className="flex justify-center">
-                    <section className="relative pt-40 max-md:pt-4 max-md pb-8 max-md:max-w-[1220px] md:pb-20 ">
-                        <div className="flex flex-col-reverse sm:flex-row justify-between">
-
-                            <div className="relative z-2 max-w-512 max-lg:max-w-388 flex flex-col justify-center max-md:pt-6">
-                                <div className="caption small-2 uppercase">
-                                    Alexander Hallgren's Portfolio
-                                </div>
-                                <h1 className="mb-6 h1 text-p4 uppercase max-lg:mb-7 max-lg:h2 max-md:mb-4 max-md:text-5xl max-md:leading-12">
-                                    Amazingly Simple
-                                </h1>
-                                <div className="min-h-[50px]">
-                                <AnimatedText text="Welcome to my portfolio page, please make sure to checkout my projects :)" />
-                                </div>
-                            </div>
-                            <div>
-                                <img src="/gibli.png" className="max-lg:h-auto w-[600px]" alt="hero" />
+                <div className="flex">
+                    <section className="relative max-md:pt-4 max-md pb-8 max-md:max-w-[1220px] md:pb-20 ">
+                        <div className="caption small-2 uppercase">
+                            Alexander Hallgren's Portfolio
+                        </div>
+                        <h1 className={styles.heading}>
+                            Chill out
+                        </h1>
+                        <div className={styles.paragraph}>
+                            <div className="min-h-[150px]">
+                                <AnimatedText text="Welcome to my portfolio, please make sure to checkout my projects :)" />
                             </div>
                         </div>
                     </section>

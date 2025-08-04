@@ -2,6 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import styles from "./imageCarousel.module.css"
 import H2Title from '../H2Title/h2Title';
+import AnimatedScrollComponent from "../AnimatedScrollComponent/animatedScrollComponent";
 
 type Props = {
     title: string,
@@ -10,13 +11,15 @@ type Props = {
 
 const ImageCarousel = ({ title, text }: Props) => {
     return (
-        <div className="w-full bg-gray-200 py-16 max-md:py-8">
+        <div className="w-full bg-[#7AA7FF] py-16 max-md:py-8">
+            <AnimatedScrollComponent>
+
             <div className="container">
 
                 <div className={styles.horizontal}>
                     <div className={styles.textSection}>
                         <H2Title text={title} />
-                        <p>{text}</p>
+                        <p className="color-[##00142d]">{text}</p>
                     </div>
                 </div>
                 <Carousel className={styles.carousel}>
@@ -54,6 +57,7 @@ const ImageCarousel = ({ title, text }: Props) => {
                     </div>
                 </Carousel>
             </div>
+            </AnimatedScrollComponent>
 
         </div>
     );

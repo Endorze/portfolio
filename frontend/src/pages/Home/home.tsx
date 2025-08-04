@@ -12,9 +12,9 @@ const Home: FC = () => {
         <div>
             <Hero />
             <ChatSection />
-            <AnimatedScrollComponent>
-                <ImageCarousel title={"View My Projects"} text={"I craft my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed. To combine my hobbies of programming and gaming."} />
-            </AnimatedScrollComponent>
+
+            <ImageCarousel title={"View My Projects"} text={"I craft my webpages with great passion, i usually take inspiration from games that i've played and that i really enjoyed. To combine my hobbies of programming and gaming."} />
+
             <PokemonSection />
         </div>
     )

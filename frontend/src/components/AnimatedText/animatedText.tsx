@@ -7,13 +7,13 @@ type Props = {
 const AnimatedText: React.FC<Props> = ({text}) => {
     return (
         <TypeIt options={{
-            speed: 100,
+            speed: 50,
             deleteSpeed: 50,
             loop: true,
             breakLines: false,
             waitUntilVisible: true,
         }}>
-            {text}
+           {text}
         </TypeIt>
     )
 }

@@ -6,6 +6,10 @@
     text-align: left;
 }
 
+.textSection p {
+    font-weight: bold;
+}
+
 .horizontal {
     display: flex;
     gap: 40px;
@@ -22,4 +26,3 @@
 .carousel .slide img {
     height: 100%;
 }
-
