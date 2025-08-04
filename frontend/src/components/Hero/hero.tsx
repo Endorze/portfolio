@@ -1,5 +1,6 @@
 import AnimatedText from "../AnimatedText/animatedText";
 import styles from "./hero.module.css"
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
     return (
@@ -19,6 +20,24 @@ const Hero = () => {
                             </div>
                         </div>
                     </section>
+                </div>
+                <div className="flex gap-6">
+                    <a
+                        href="https://github.com/Endorze"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-transform duration-300 hover:-rotate-6"
+                    >
+                        <FaGithub size={64} />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/alexander-hallgren-5a4a501aa/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-transform duration-300 hover:rotate-6"
+                    >
+                        <FaLinkedin size={64} />
+                    </a>
                 </div>
             </div>
         </div>
