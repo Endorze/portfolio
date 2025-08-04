@@ -63,12 +63,12 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div className="bg-[#FF8989] border-t-[5px] border-b-[5px] border-solid border-black">
+        <div className="bg-[#FF8989]">
             <div className="py-16 max-md:py-12">
                 <div className="container">
                     <div>
                         <div className={styles.chatTitle}>
-                            <p className="pb-12 max-md:pb-4">Ask me Questions about Alexander Hallgren</p>
+                            <p className="pb-6 max-md:pb-4">Ask me Questions about Alexander Hallgren</p>
                         </div>
                         <div className="border rounded-2xl p-12 max-md:p-4 bg-white">
                             <div className="h-[225px] overflow-y-auto scrollbar-hide">
@@ -118,8 +118,9 @@ const ChatSection: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <p className="text-white pt-6">"What does Alex know?"</p>
                 </div>
-
+        
             </div>
         </div>
     );
