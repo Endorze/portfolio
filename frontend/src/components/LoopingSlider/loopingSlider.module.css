@@ -1,0 +1,43 @@
+.marqueeWrapper {
+  overflow: hidden;
+  width: 100%;
+  max-height: 4rem;
+  position: fixed;
+  background-color: black;
+  z-index: 1;
+  transition: all 0.5s ease-in;
+}
+
+.marqueeContent {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 30s linear infinite;
+  padding: 0.5rem;
+}
+
+.logo {
+  flex: 0 0 auto;
+  padding: 0 2rem;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.gradientLine {
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(to right, #ff6b6b, #f06595, #845ef7);
+}
+
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
