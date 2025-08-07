@@ -4,7 +4,7 @@ import PokemonSection from "../../components/PokemonSection/pokemonSection";
 import Hero from "../../components/Hero/hero";
 import AnimatedScrollComponent from "../../components/AnimatedScrollComponent/animatedScrollComponent";
 import ChatSection from "../../components/ChatSection/chatSection";
-import LoopingSlider from "../../components/LoopingSlider/loopingSlider";
+
 
 const Home: FC = () => {
 

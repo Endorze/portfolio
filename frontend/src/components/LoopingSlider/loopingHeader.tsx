@@ -2,7 +2,8 @@
 
 import clsx from 'clsx'
 import { useState, useEffect, useRef } from 'react'
-import styles from './loopingSlider.module.css'
+import styles from './loopingHeader.module.css'
+
 
 const logos = [
     "/images/carlexlogo.png",
@@ -47,12 +48,34 @@ const LoopingSlider = () => {
                 <div className={styles.marqueeContent}>
                     {allLogos.map((src, i) => (
                         <div className={styles.logo} key={i}>
-                            <img src={src} alt={`logo-${i}`} />
+                            {/**linear-gradient(90deg, #FFA9FF 0%, #FFB78B 22%, #FF8282 43%, #43FEFF 70%, #FFFF5C 100%); */}
+                            <p className='bg-gradient-to-r from-[#FFA9FF] via-[#FFB78B] via-[#FF8282] via-[#43FEFF] to-[#845ef7] inline-block text-transparent bg-clip-text text-[14px] tracking-wide drop-shadow-sm'>
+                                $ LOOKING FOR LIA | WORK OPPORTUNITIES
+                            </p>
+
                         </div>
                     ))}
                 </div>
                 <div className={styles.gradientLine}></div>
-            </div>            
+            </div>
+
+            <div className={clsx(styles.menu, isHidden && 'transform-all translate-x-[-50px] duration-700 opacity-0')}>
+                <div className='container'>
+                    <div className={styles.menuButtons}>
+                        <button className={styles.fancyButton}>
+                            <span className={styles.buttonBg}></span>
+                            <span className={styles.buttonText}>MENU</span>
+                        </button>
+                        <img className='max-w-auto h-[120px]' src='/images/snowman.png' />
+                        <button className={styles.fancyButton}>
+                            <span className={styles.buttonBg1}></span>
+                            <span className={styles.buttonBg}></span>
+                            <span className={styles.buttonText}>MENU</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }
