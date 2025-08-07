@@ -3,7 +3,7 @@ import Header from "../Header/header";
 import { Outlet } from "react-router-dom";
 import ChatWidget from "../Chat/Chat";
 import Footer from "../Footer/footer";
-import LoopingSlider from "../LoopingSlider/loopingSlider";
+import LoopingSlider from "../LoopingSlider/loopingHeader";
 
 
 function HeaderLayout() {
@@ -22,9 +22,9 @@ function HeaderLayout() {
 
     return (
         <div>
-            <LoopingSlider />
             {/* {isLargeScreen && <Header />} */}
             <Outlet />
+            <LoopingSlider />
             <ChatWidget />
             <Footer />
         </div>
