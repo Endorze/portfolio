@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
     return (
-        <div className="w-full bg-[url(/images/glacier.jpg)] bg-no-repeat bg-cover min-h-[115vh] flex items-start md:items-center pt-36 md:pt-0">
+        <div className="w-full bg-[url(/images/glacier.jpg)] bg-no-repeat bg-cover min-h-[115vh] flex items-start md:items-center pt-60 md:pt-0">
             <div className="container">
                 <div className="flex">
                     <section className="relative max-md:pt-4 max-md pb-8 max-md:max-w-[1220px] md:pb-20 ">

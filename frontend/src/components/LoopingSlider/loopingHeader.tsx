@@ -70,7 +70,7 @@ const LoopingSlider = () => {
                         <button className={styles.fancyButton}>
                             <span className={styles.buttonBg1}></span>
                             <span className={styles.buttonBg}></span>
-                            <span className={styles.buttonText}>MENU</span>
+                            <span className={styles.buttonText}>OPTIONS</span>
                         </button>
                     </div>
                 </div>
