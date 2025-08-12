@@ -63,7 +63,7 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div className="bg-[#FF8989]">
+        <div className="bg-[#FF8989]" id="chat">
             <div className="py-16 max-md:py-12">
                 <div className="container">
                     <div>

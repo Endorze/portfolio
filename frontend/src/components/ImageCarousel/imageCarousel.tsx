@@ -14,7 +14,7 @@ const ImageCarousel = ({ title, text }: Props) => {
         <div className="w-full bg-[#7AA7FF] py-16 max-md:py-8">
             <AnimatedScrollComponent>
 
-            <div className="container">
+            <div className="container" id="projects">
 
                 <div className={styles.horizontal}>
                     <div className={styles.textSection}>

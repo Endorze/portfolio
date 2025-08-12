@@ -4,80 +4,156 @@ import clsx from 'clsx'
 import { useState, useEffect, useRef } from 'react'
 import styles from './loopingHeader.module.css'
 
-
 const logos = [
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
-    "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
+  "/images/carlexlogo.png",
 ]
 
+const navItems = [
+  { label: "CHAT WITH ASSISTANT", id: "chat" },
+  { label: "MY PROJECTS", id: "projects" },
+  { label: "POKÉMON FANGAME", id: "pokemon" },
+//Can add more if needed
+];
+
 const LoopingSlider = () => {
+  const allLogos = [...logos, ...logos];
+  const [isHidden, setIsHidden] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuClosing, setMenuClosing] = useState(false);
+  const lastScrollY = useRef(0);
 
-    const allLogos = [...logos, ...logos];
-    const [isHidden, setIsHidden] = useState<boolean>(false);
-    const [hasScroll, setHasScroll] = useState<boolean>(false);
-    const lastScrollY = useRef(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
+        setIsHidden(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY
-            if (currentScrollY > lastScrollY.current && currentScrollY > 150) {
-                setIsHidden(true);
-            } else if (currentScrollY < lastScrollY.current) {
-                setIsHidden(false);
-            }
+  useEffect(() => {
+    document.body.classList.toggle("overflow-hidden", menuOpen);
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [menuOpen]);
 
-            lastScrollY.current = currentScrollY;
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+  const closeMenu = () => {
+    setMenuClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setMenuClosing(false);
+    }, 300);
+  };
 
-    return (
-        <>
-            <div className={clsx(styles.marqueeWrapper, isHidden && "transform-all translate-y-[-50px] duration-700 opacity-0")}>
-                <div className={styles.marqueeContent}>
-                    {allLogos.map((src, i) => (
-                        <div className={styles.logo} key={i}>
-                            {/**linear-gradient(90deg, #FFA9FF 0%, #FFB78B 22%, #FF8282 43%, #43FEFF 70%, #FFFF5C 100%); */}
-                            <p className='bg-gradient-to-r from-[#FFA9FF] via-[#FFB78B] via-[#FF8282] via-[#43FEFF] to-[#845ef7] inline-block text-transparent bg-clip-text text-[14px] tracking-wide drop-shadow-sm'>
-                                $ LOOKING FOR LIA | WORK OPPORTUNITIES
-                            </p>
+  const goTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    closeMenu(); 
+  };
 
-                        </div>
-                    ))}
-                </div>
-                <div className={styles.gradientLine}></div>
+
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      closeMenu(); 
+    }
+  };
+
+  return (
+    <>
+      <div
+        className={clsx(
+          styles.marqueeWrapper,
+          isHidden && "transform-all translate-y-[-50px] duration-700 opacity-0"
+        )}
+      >
+        <div className={styles.marqueeContent}>
+          {allLogos.map((src, i) => (
+            <div className={styles.logo} key={i}>
+              <p className="bg-gradient-to-r from-[#FFA9FF] via-[#FFB78B] via-[#FF8282] via-[#43FEFF] to-[#845ef7] inline-block text-transparent bg-clip-text text-[14px] tracking-wide drop-shadow-sm font-bold">
+                $ LOOKING FOR LIA | WORK OPPORTUNITIES
+              </p>
             </div>
+          ))}
+        </div>
+        <div className={styles.gradientLine}></div>
+      </div>
 
-            <div className={clsx(styles.menu, isHidden && 'transform-all translate-x-[-50px] duration-700 opacity-0')}>
-                <div className='container'>
-                    <div className={styles.menuButtons}>
-                        <button className={styles.fancyButton}>
-                            <span className={styles.buttonBg}></span>
-                            <span className={styles.buttonText}>MENU</span>
-                        </button>
-                        <img className='max-w-auto h-[120px]' src='/images/snowman.png' />
-                        <button className={styles.fancyButton}>
-                            <span className={styles.buttonBg1}></span>
-                            <span className={styles.buttonBg}></span>
-                            <span className={styles.buttonText}>OPTIONS</span>
-                        </button>
-                    </div>
-                </div>
+      <div
+        className={clsx(
+          styles.menu,
+          isHidden && "transform-all translate-x-[-50px] duration-700 opacity-0"
+        )}
+      >
+        <div className="container">
+          <div className={styles.menuButtons}>
+            <button
+              className={styles.fancyButton}
+              onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))} 
+              aria-expanded={menuOpen}
+              aria-controls="topdrop"
+            >
+              <span className={styles.buttonBg}></span>
+              <span className={styles.buttonText}>
+                {menuOpen ? "CLOSE" : "MENU"}
+              </span>
+            </button>
+            <img
+              className="max-w-auto h-[120px]"
+              src="/images/snowman.png"
+              alt="snowman"
+            />
+          </div>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div
+          id="topdrop"
+          className={clsx(
+            styles.topDrop,
+            styles.topDropOpen,
+            menuClosing ? styles.slideUp : styles.slideDown
+          )}
+          onClick={handleOverlayClick}
+        >
+          <div className={styles.topDropInner}>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                className={styles.navItem}
+                onClick={() => goTo(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
+            <div className={styles.socials}>
+              <a href="https://web.facebook.com/profile.php?id=100008084297525">FACEBOOK</a>
+              <a href="https://www.linkedin.com/in/alexander-hallgren-5a4a501aa/">LINKEDIN</a>
+              <a href="https://github.com/Endorze">GITHUB</a>
+              <a href="https://www.instagram.com/alexander_webdev/">INSTAGRAM</a>
+              <div className="container">
+
+          <div className={styles.menuButtons}>
+          </div>
+        </div>
             </div>
-
-        </>
-    )
-}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default LoopingSlider;

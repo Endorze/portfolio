@@ -8,7 +8,7 @@ import H2Title from "../H2Title/h2Title";
 const PokemonSection = () => {
     return (
         <div className="bg-[#E7F5F6]">
-            <div className="container">
+            <div className="container" id="pokemon">
                 <div className="py-16 max-md:py-8">
                     <VideoContainer list={pokemonPaths} title={"Project Spotlight"} project={"Pokémon Browser Game"} />
                         <div className={styles.textContainer}>
