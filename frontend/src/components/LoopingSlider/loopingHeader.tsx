@@ -139,10 +139,10 @@ const LoopingSlider = () => {
               </button>
             ))}
             <div className={styles.socials}>
-              <a href="https://web.facebook.com/profile.php?id=100008084297525">FACEBOOK</a>
-              <a href="https://www.linkedin.com/in/alexander-hallgren-5a4a501aa/">LINKEDIN</a>
-              <a href="https://github.com/Endorze">GITHUB</a>
-              <a href="https://www.instagram.com/alexander_webdev/">INSTAGRAM</a>
+              <a target='_blank' href="https://web.facebook.com/profile.php?id=100008084297525">FACEBOOK</a>
+              <a target='_blank' href="https://www.linkedin.com/in/alexander-hallgren-5a4a501aa/">LINKEDIN</a>
+              <a target='_blank' href="https://github.com/Endorze">GITHUB</a>
+              <a target='_blank' href="https://www.instagram.com/alexander_webdev/">INSTAGRAM</a>
               <div className="container">
 
           <div className={styles.menuButtons}>
