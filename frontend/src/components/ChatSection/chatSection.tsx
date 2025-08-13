@@ -63,14 +63,14 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div id="ai">
+        <div id="ai" className="container">
             <div className="py-16 max-md:py-12">
                 <div>
                     <div>
                         <div className={styles.chatTitle}>
                             <p className="pb-6 max-md:pb-4">Ask me Questions about Alexander Hallgren</p>
                         </div>
-                        <div className="border rounded-2xl p-12 max-md:p-4 bg-white">
+                        <div className="border rounded-2xl p-12 max-md:p-4 bg-white w-full">
                             <div className="h-[225px] overflow-y-auto scrollbar-hide">
                                 {messages.map((msg, idx) => (
 
