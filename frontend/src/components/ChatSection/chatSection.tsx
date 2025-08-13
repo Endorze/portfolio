@@ -63,7 +63,7 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div id="chat">
+        <div id="ai">
             <div className="py-16 max-md:py-12">
                 <div>
                     <div>
@@ -118,7 +118,7 @@ const ChatSection: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <p className="text-white pt-6">"What does Alex know?"</p>
+                    <p className="text-black pt-6">"What does Alex know?"</p>
                 </div>
         
             </div>
