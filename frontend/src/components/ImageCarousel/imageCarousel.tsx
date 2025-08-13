@@ -51,10 +51,6 @@ const ImageCarousel = ({ title, text }: Props) => {
                         <img src="/images/carousel/kantherm.png" alt="Slide 6" />
                         <a href="https://kantherm.se/" className="legend">Go to Kantherm.se</a>
                     </div>
-                    <div>
-                        <img src="/images/carousel/avalon.png" alt="Slide 7" />
-                        <a href="http://endorze.org:81/" className="legend">Ps... Page does not load content without downloading the screenreader for Albion</a>
-                    </div>
                 </Carousel>
             </div>
             </AnimatedScrollComponent>
