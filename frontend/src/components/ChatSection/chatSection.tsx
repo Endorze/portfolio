@@ -63,9 +63,9 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div className="bg-[#FF8989]" id="chat">
+        <div id="chat">
             <div className="py-16 max-md:py-12">
-                <div className="container">
+                <div>
                     <div>
                         <div className={styles.chatTitle}>
                             <p className="pb-6 max-md:pb-4">Ask me Questions about Alexander Hallgren</p>
@@ -106,7 +106,7 @@ const ChatSection: React.FC = () => {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={handleKeyDown}
-                                    className="overflow-x-auto w-full scrollbar-hide"
+                                    className="overflow-x-auto w-full scrollbar-hide outline-none"
                                 />
                             </div>
                             <div>

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "../Header/header";
 import { Outlet } from "react-router-dom";
-import ChatWidget from "../Chat/Chat";
 import Footer from "../Footer/footer";
-import LoopingSlider from "../LoopingSlider/loopingHeader";
 import LoadingScreen from "../loadingScreen/loadingScreen";
+import { Sidebar } from "../Sidebar/Sidebar";
 
 
 function HeaderLayout() {
@@ -23,14 +21,11 @@ function HeaderLayout() {
 
     return (
         <div>
-            <LoadingScreen>
-
-            {/* {isLargeScreen && <Header />} */}
-            <Outlet />
-            <LoopingSlider />
-            <ChatWidget />
-            <Footer />
-            </LoadingScreen>
+            {/* <LoadingScreen> */}
+                <Outlet />
+                <Sidebar />
+                {/* {isLargeScreen && <Header />} */}
+            {/* </LoadingScreen> */}
         </div>
     )
 }

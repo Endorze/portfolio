@@ -3,106 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-@keyframes fadeIn {
-  from { opacity: 0 }
-  to { opacity: 1 }
-}
-@keyframes slideDown {
-  from { transform: translateY(-100%); opacity: 0 }
-  to { transform: translateY(0); opacity: 1 }
-}
-@keyframes slideUp {
-  from { transform: translateY(0); opacity: 1 }
-  to { transform: translateY(-100%); opacity: 0 }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease-out forwards;
-}
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out forwards;
-}
-.animate-slideUp {
-  animation: slideUp 0.3s ease-in forwards;
-}
-
 @layer base {
 
   body {
-    @apply font-poppins text-[16px] tracking-[-0.03em] ;
-    background-color: #b16116
-  }
-
-  a {
-    @apply no-underline;
-  }
-
-  button {
-    @apply bg-none tracking-[-0.03em];
-  }
-
-  input {
-    @apply tracking-[-0.03em];
+    @apply font-poppins text-[16px] tracking-[-0.03em];
   }
 }
 
-h1, h2, h3, p, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-transform: uppercase
 }
 
-@layer utilities {
-  /* START of Typography */
-  .h-num {
-    @apply font-inter text-[72px] font-bold leading-[84px];
-  }
+.container {
+  @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
+}
 
-  .h1 {
-    @apply text-[84px] font-black leading-[84px] tracking-[-0.03em];
-    color: #000000
-  }
-
-  .h2 {
-    color: var(--title)
-  }
-
-  .base {
-    @apply text-[16px] font-medium leading-[24px] tracking-[0.03em];
-  }
-
-  .base-bold {
-    @apply text-[16px] font-bold leading-[24px];
-  }
-
-  .base-small {
-    @apply text-[14px] font-semibold leading-[18px] tracking-[0.03em];
-  }
-
-  .small-1 {
-    @apply text-[14px] font-semibold leading-[18px] tracking-[0.03em];
-  }
-
-  .small-2 {
-    @apply text-[12px] font-bold leading-[16px] tracking-[0.3em];
-    color: var(--title)
-  }
-
-  .small-compact {
-    @apply text-[12px] font-semibold leading-[18px] tracking-[0.03em];
-  }
-
-  /* END of Typography */
-  /* START of Gradients */
-  
-
- 
-  /* END of Gradients */
-  /* START of Common */
-  .container {
-    @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
-  }
-  /*  END of Footer*/
+h1 {
+  color: var(--title);
 }
 
 :root {
@@ -120,11 +40,13 @@ h1, h2, h3, p, h4 {
   --title: #0d4896;
 }
 
-html, body {
+html,
+body {
   min-height: 100vh;
   overflow-x: hidden;
   color: #000000;
   background-color: #ffffff;
+  scroll-behavior: smooth;
 }
 
 p {
