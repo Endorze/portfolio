@@ -1,0 +1,22 @@
+.cdWordsWrapper {
+  position: relative;
+  display: inline-grid;   /* <-- grid istället för absolute-children */
+  height: 1em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+/* alla ord ligger i samma gridcell och överlappar */
+.cdWordsWrapper b {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 450ms ease, opacity 450ms ease;
+}
+
+/* aktuellt ord syns och ligger på plats */
+.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}

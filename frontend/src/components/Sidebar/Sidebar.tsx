@@ -36,14 +36,12 @@ export const Sidebar = () => {
 
 
     return (
-        <aside ref={containerRef} className={styles.SidebarContainer}>
+        <aside ref={containerRef}  className={`${styles.SidebarContainer} hidden md:block`}>
             <div className={styles.Sidebar}>
                 <div className={styles.Content}>
                     <a href="#home">Home</a>
+                    <a href="#tools">What i do</a>
                     <a href="#ai">AI Chat</a>
-                    <a>Home</a>
-                    <a>Home</a>
-                    <a>Home</a>
                     <a target="_blank" href="/alexander_hallgren_cv.pdf">Resume/CV</a>
                     <div className="flex gap-4">
                         <a href="https://www.linkedin.com/in/alexander-hallgren-5a4a501aa/" target="_blank" rel="noopener noreferrer">

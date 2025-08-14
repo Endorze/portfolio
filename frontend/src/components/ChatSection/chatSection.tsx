@@ -64,6 +64,9 @@ const ChatSection: React.FC = () => {
 
     return (
         <div id="ai" className="container">
+             <h3 className="hidden md:block text-[12rem] pt-24 text-primary opacity-10 leading-[0.8] -z-10 max-w-7xl mt-4 text-center">
+                    Ask me
+                </h3>
             <div className="py-16 max-md:py-12">
                 <div>
                     <div>
@@ -111,10 +114,10 @@ const ChatSection: React.FC = () => {
                             </div>
                             <div>
                                 <button className="bg-indigo-600 text-white rounded-xl p-2" onClick={sendMessage}>Skicka</button>
-                                <VoiceRecognition onVoiceSubmit={(voiceText) => {
+                                {/* <VoiceRecognition onVoiceSubmit={(voiceText) => {
                                     setInput(voiceText);
                                     sendMessage();
-                                }}/>
+                                }}/> */}
                             </div>
                         </div>
                     </div>
