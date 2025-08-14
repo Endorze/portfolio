@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import TextTransition, { presets } from "react-text-transition";
 import Container from "../Container/container";
+import styles from "./Tools.module.css"
 
 const WORDS = ["dazzling", "amazing", "surprising", "unbelivable", "stunning", "astonishing"];
 
@@ -32,7 +33,7 @@ export default function Tools({
                         <h4 className="text-[1.5rem] md:inline-block items-baseline font-bold text-4xl sm:text-2xl text-[#0d4896]">
                             <span>{prefix}&nbsp;</span>
                             <span
-                                className="inline-block overflow-hidden h-[1em]"
+                                className="inline-block overflow-hidden h-[1em] text-gray-600"
                                 style={{ willChange: "transform", contain: "layout paint" }}
                             >
                                 <TextTransition
