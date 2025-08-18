@@ -1,7 +1,0 @@
-.linkDiv a {
-    font-weight: bold;
-}
-
-.linkDiv a:hover {
-    color: var(--form-link-hover);
-}

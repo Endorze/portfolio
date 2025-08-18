@@ -63,14 +63,17 @@ const ChatSection: React.FC = () => {
     };
 
     return (
-        <div className="bg-[#FF8989]" id="chat">
+        <div id="ai" className="container">
+             <h3 className="hidden md:block text-[12rem] pt-24 text-primary opacity-10 leading-[0.8] -z-10 max-w-7xl mt-4 text-center">
+                    Ask me
+                </h3>
             <div className="py-16 max-md:py-12">
-                <div className="container">
+                <div>
                     <div>
                         <div className={styles.chatTitle}>
                             <p className="pb-6 max-md:pb-4">Ask me Questions about Alexander Hallgren</p>
                         </div>
-                        <div className="border rounded-2xl p-12 max-md:p-4 bg-white">
+                        <div className="border rounded-2xl p-12 max-md:p-4 bg-white w-full">
                             <div className="h-[225px] overflow-y-auto scrollbar-hide">
                                 {messages.map((msg, idx) => (
 
@@ -106,19 +109,19 @@ const ChatSection: React.FC = () => {
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={handleKeyDown}
-                                    className="overflow-x-auto w-full scrollbar-hide"
+                                    className="overflow-x-auto w-full scrollbar-hide outline-none"
                                 />
                             </div>
                             <div>
                                 <button className="bg-indigo-600 text-white rounded-xl p-2" onClick={sendMessage}>Skicka</button>
-                                <VoiceRecognition onVoiceSubmit={(voiceText) => {
+                                {/* <VoiceRecognition onVoiceSubmit={(voiceText) => {
                                     setInput(voiceText);
                                     sendMessage();
-                                }}/>
+                                }}/> */}
                             </div>
                         </div>
                     </div>
-                    <p className="text-white pt-6">"What does Alex know?"</p>
+                    <p className="text-black pt-6">"What does Alex know?"</p>
                 </div>
         
             </div>
