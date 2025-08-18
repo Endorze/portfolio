@@ -71,7 +71,7 @@ const ChatSection: React.FC = () => {
                 <div>
                     <div>
                         <div className={styles.chatTitle}>
-                            <p className="pb-6 max-md:pb-4">Ask me Questions about Alexander Hallgren</p>
+                            <p className="pb-6 max-md:pb-4">Got a Question?</p>
                         </div>
                         <div className="border rounded-2xl p-12 max-md:p-4 bg-white w-full">
                             <div className="h-[225px] overflow-y-auto scrollbar-hide">
@@ -105,7 +105,7 @@ const ChatSection: React.FC = () => {
                             <div className="flex py-4">
                                 <input
                                     type="text"
-                                    placeholder="Ask me anything"
+                                    placeholder="What does Alex know?"
                                     value={input}
                                     onChange={(e) => setInput(e.target.value)}
                                     onKeyDown={handleKeyDown}
@@ -121,7 +121,6 @@ const ChatSection: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <p className="text-black pt-6">"What does Alex know?"</p>
                 </div>
         
             </div>

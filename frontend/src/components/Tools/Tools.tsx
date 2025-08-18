@@ -24,7 +24,7 @@ export default function Tools({
         <div className="pt-12 md:flex justify-center items-center w-full mx-auto">
             <Container>
                 <h3 id="tools" className="hidden md:block text-[12rem] py-24 text-primary opacity-10 leading-[0.8] -z-10 max-w-7xl mt-4 text-center">
-                    What i do
+                    Knowledge
                 </h3>
 
                 <div className="w-full md:w-auto md:flex min-h-[400px] border border-gray-200 shadow-md bg-white">
