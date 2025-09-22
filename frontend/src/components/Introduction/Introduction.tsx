@@ -58,7 +58,7 @@ export const Introduction = () => {
                 rel="noreferrer"
                 className="text-primaryDark underline underline-offset-4 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-sm"
               >
-                Student at Futuregames Education
+                Junior Fullstack Engineer - Internship at FIXMEAPP
               </a>
             </p>
 

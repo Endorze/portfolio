@@ -59,11 +59,13 @@ export default function Tools({
                         <div className="flex justify-between p-12 text-white">
                             <div>
                                 <p>React.js</p>
+                                <p>React Native</p>
                                 <p>Next.js</p>
                                 <p>TypeScript.js</p>
                                 <p>Express.js</p>
                                 <p>Node.js</p>
                                 <p>Sass</p>
+                                <p>Python</p>
                             </div>
                             <div>
                                 <p>Docker</p>
@@ -71,6 +73,7 @@ export default function Tools({
                                 <p>Redux</p>
                                 <p>Modular CSS</p>
                                 <p>Tailwind</p>
+                    
                             </div>
                         </div>
                     </div>
